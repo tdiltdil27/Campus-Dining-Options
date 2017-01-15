@@ -37,6 +37,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
     public void onBindViewHolder(MealTimeAdapter.ViewHolder holder, int position) {
         MealTime name = mealTimes.get(position);
         holder.mNameView.setText(name.getName());
+
         switch (name.getName()) {
             case "Breakfast":
 

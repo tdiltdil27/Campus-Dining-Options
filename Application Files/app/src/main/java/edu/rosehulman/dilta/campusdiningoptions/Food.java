@@ -8,6 +8,7 @@ public class Food {
 
     private String name;
     private int calories;
+    private String[] icons;
 
     public Food() {
 
@@ -19,6 +20,14 @@ public class Food {
 
     public String getName() {
         return name;
+    }
+
+    public String[] getIcons() {
+        return icons;
+    }
+
+    public void setIcons(String[] icons) {
+        this.icons = icons;
     }
 
     public void setCalories(int calories) {
