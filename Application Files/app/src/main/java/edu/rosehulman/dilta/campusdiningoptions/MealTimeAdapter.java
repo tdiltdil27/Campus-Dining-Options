@@ -20,8 +20,9 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
     private RecyclerView mView;
 
     public MealTimeAdapter(Context context, RecyclerView view) {
-        mealTimes = null;
+
         mContext = context;
+        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
         mView = view;
 
     }

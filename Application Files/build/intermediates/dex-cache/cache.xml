@@ -66,6 +66,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\dilta\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.1\55605135bd7b836612e0bba7037c9669f6ccf89f\jackson-annotations-2.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="55605135bd7b836612e0bba7037c9669f6ccf89f">
+        <dex dex="C:\Users\dilta\AndroidStudioProjects\Campus-Dining-Options\Application Files\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.4.1_b4cebb64e17b9fe11ab4df24f2d96799bc22e86a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\dilta\AndroidStudioProjects\Campus-Dining-Options\Application Files\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -120,6 +129,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\dilta\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.1\f07c773f7b3a03c3801d405cadbdc93f7548e321\jackson-databind-2.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f07c773f7b3a03c3801d405cadbdc93f7548e321">
+        <dex dex="C:\Users\dilta\AndroidStudioProjects\Campus-Dining-Options\Application Files\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.4.1_f6dddd5b0362b1407a2fde34c968a7cf5f498b40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\dilta\AndroidStudioProjects\Campus-Dining-Options\Application Files\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -135,6 +153,15 @@
         revision="25.0.2"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
         <dex dex="C:\Users\dilta\AndroidStudioProjects\Campus-Dining-Options\Application Files\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_cf4bf065de9babab3a6e90346a6114f9d9f6fee5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dilta\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.1\b130bcfb5a9c410c3cbd2e0adec9437e69a39e2c\jackson-core-2.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b130bcfb5a9c410c3cbd2e0adec9437e69a39e2c">
+        <dex dex="C:\Users\dilta\AndroidStudioProjects\Campus-Dining-Options\Application Files\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.4.1_26bfbbddb85bdbc114bdc73cce48bbd951cccfbf\classes.dex" />
     </item>
 
 </items>

@@ -15,8 +15,8 @@ import java.util.List;
 
 public class SampleUtil {
 
-    public static List<MealTime> loadWordsFromJsonArray(Context context) {
-        InputStream is = context.getResources().openRawResource(R.raw.data.json);
+    public static List<MealTime> loadMealTimesFromJsonArray(Context context) {
+        InputStream is = context.getResources().openRawResource(R.raw.data);
         List<MealTime> words = null;
         try {
             words = new ObjectMapper().readValue(is, new TypeReference<List<MealTime>>() {
