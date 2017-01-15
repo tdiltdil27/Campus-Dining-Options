@@ -4,9 +4,9 @@
     <string name="foods">Foods</string>
     <string name="times">Times</string>
     <string name="name">Name</string>
-    <string name="time_layout_breakfast">%d AM - %d AM</string>
-    <string name="time_layout_brunch">%d AM - %d PM</string>
-    <string name="time_layout_lunch">%d AM - %d PM</string>
-    <string name="time_layout_dinner">%d PM - %d PM</string>
-    <string name="time_layout_grabngo">%d AM - %d PM</string>
+    <string name="time_layout_breakfast">%1$d AM - %2$d AM</string>
+    <string name="time_layout_brunch">%1$d AM - %2$d PM</string>
+    <string name="time_layout_lunch">%1$d AM - %2$d PM</string>
+    <string name="time_layout_dinner">%1$d PM - %2$d PM</string>
+    <string name="time_layout_grabngo">%1$d AM - %2$d PM</string>
 </resources>
