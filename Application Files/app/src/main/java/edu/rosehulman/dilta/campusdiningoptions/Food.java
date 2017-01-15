@@ -7,13 +7,14 @@ package edu.rosehulman.dilta.campusdiningoptions;
 public class Food {
 
     private String name;
-    private int calories;
+    private String calories;
+    private String[] icons;
 
     public Food() {
 
     }
 
-    public int getCalories() {
+    public String getCalories() {
         return calories;
     }
 
@@ -21,7 +22,15 @@ public class Food {
         return name;
     }
 
-    public void setCalories(int calories) {
+    public String[] getIcons() {
+        return icons;
+    }
+
+    public void setIcons(String[] icons) {
+        this.icons = icons;
+    }
+
+    public void setCalories(String calories) {
         this.calories = calories;
     }
 

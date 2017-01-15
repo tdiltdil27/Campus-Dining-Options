@@ -1,0 +1,145 @@
+[
+    {
+        "meal": {
+            "hours": "",
+            "items": [
+                {
+                    "calories": "[180 cal.]",
+                    "icons": [
+                        "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                    ],
+                    "name": "scrambled eggs"
+                },
+                {
+                    "calories": "[350 cal.]",
+                    "icons": [],
+                    "name": "texas french toast"
+                },
+                {
+                    "calories": "[250 cal.]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products.",
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "sweet potato tots"
+                },
+                {
+                    "calories": "[180 cal.]",
+                    "icons": [
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "pork breakfast sausage"
+                },
+                {
+                    "calories": "[130 cal.]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products."
+                    ],
+                    "name": "old-fashioned oatmeal"
+                }
+            ]
+        }
+    },
+    {
+        "meal": {
+            "hours": "",
+            "items": [
+                {
+                    "calories": "[180 cal.]",
+                    "icons": [
+                        "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                    ],
+                    "name": "scrambled eggs"
+                },
+                {
+                    "calories": "[350 cal.]",
+                    "icons": [],
+                    "name": "texas french toast"
+                },
+                {
+                    "calories": "[250 cal.]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products.",
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "sweet potato tots"
+                },
+                {
+                    "calories": "[180 cal.]",
+                    "icons": [
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "pork breakfast sausage"
+                },
+                {
+                    "calories": "[530 cal.]",
+                    "icons": [
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "grilled chipotle lime pork chops"
+                },
+                {
+                    "calories": "[130 cal.]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products."
+                    ],
+                    "name": "old-fashioned oatmeal"
+                }
+            ]
+        }
+    },
+    {
+        "meal": {
+            "hours": "",
+            "items": [
+                {
+                    "calories": "[510 cal.]",
+                    "icons": [],
+                    "name": "carbonara pasta with cheese tortellini, ham, peas and tomatoes"
+                },
+                {
+                    "calories": "[520 cal.]",
+                    "icons": [
+                        "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                    ],
+                    "name": "roasted vegetable tortellini with parmesan pesto"
+                },
+                {
+                    "calories": "[170 cal.]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products."
+                    ],
+                    "name": "french fries"
+                },
+                {
+                    "calories": "[340 cal.]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products."
+                    ],
+                    "name": "house-made bean burger"
+                },
+                {
+                    "calories": "[]",
+                    "icons": [],
+                    "name": "meatball sub"
+                },
+                {
+                    "calories": "[]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products.",
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "strawberrry- banana-pineapple"
+                },
+                {
+                    "calories": "[]",
+                    "icons": [
+                        "Vegan: Contains absolutely no animal or dairy products.",
+                        "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                    ],
+                    "name": "honeydew"
+                }
+            ]
+        }
+    }
+]
