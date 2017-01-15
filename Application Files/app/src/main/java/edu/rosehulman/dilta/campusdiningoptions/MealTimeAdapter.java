@@ -39,28 +39,8 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         MealTime name = mealTimes.get(position);
         holder.mNameView.setText(name.getName());
 
-        switch (name.getName()) {
-            case "Breakfast":
+        holder.mTimeView.setText(name.getHours());
 
-                holder.mTimeView.setText(String.format(mContext.getResources().getString(R.string.time_layout_breakfast), name.getTime()[0], name.getTime()[1]));
-                break;
-            case "Lunch":
-
-                holder.mTimeView.setText(String.format(mContext.getResources().getString(R.string.time_layout_lunch), name.getTime()[0], name.getTime()[1]));
-                break;
-            case "Brunch":
-
-                holder.mTimeView.setText(String.format(mContext.getResources().getString(R.string.time_layout_brunch), name.getTime()[0], name.getTime()[1]));
-                break;
-            case "Dinner":
-
-                holder.mTimeView.setText(String.format(mContext.getResources().getString(R.string.time_layout_dinner), name.getTime()[0], name.getTime()[1]));
-                break;
-            case "Grab N' Go":
-
-                holder.mTimeView.setText(String.format(mContext.getResources().getString(R.string.time_layout_grabngo), name.getTime()[0], name.getTime()[1]));
-                break;
-        }
         holder.mFoodView.setText(name.getFoods());
     }
 

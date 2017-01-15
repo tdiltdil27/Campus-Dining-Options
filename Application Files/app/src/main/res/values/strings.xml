@@ -9,4 +9,7 @@
     <string name="time_layout_lunch">%1$d AM - %2$d PM</string>
     <string name="time_layout_dinner">%1$d PM - %2$d PM</string>
     <string name="time_layout_grabngo">%1$d AM - %2$d PM</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="action_hours">Hours</string>
+    <string name="action_calendar">Calendar</string>
 </resources>
