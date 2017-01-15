@@ -1,8 +1,6 @@
 from bs4 import BeautifulSoup
-import requests
 import dryscrape
 import json
-from Item import Item
 
 url = "http://rose-hulman.cafebonappetit.com/"
 
@@ -41,6 +39,8 @@ for meal in [breakfast, lunch, dinner]:
         meal_dict["items"].append(item)
     meals.append({"meal": meal_dict})
 
-print(json.dumps(meals))
+data = json.dumps(meals, sort_keys=True, indent=4, separators=(',', ': '))
 
-
+f = open('data.json', 'w')
+f.write(data)
+f.close()
