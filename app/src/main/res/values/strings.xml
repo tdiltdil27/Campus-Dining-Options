@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Campus Dining Options</string>
+    <string name="action_settings">Settings</string>
+    <string name="foods">Foods</string>
+    <string name="times">Times</string>
+    <string name="name">Name</string>
+    <string name="time_layout_breakfast">%d AM - %d AM</string>
+    <string name="time_layout_brunch">%d AM - %d PM</string>
+    <string name="time_layout_lunch">%d AM - %d PM</string>
+    <string name="time_layout_dinner">%d PM - %d PM</string>
+    <string name="time_layout_grabngo">%d AM - %d PM</string>
+</resources>
