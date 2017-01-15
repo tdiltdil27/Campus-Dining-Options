@@ -21,7 +21,7 @@ dinner = soup.select("#panel-daypart-menu-3 article .daypart-menu .column articl
 meals = []
 
 for meal in [breakfast, lunch, dinner]:
-    meal_dict = {"hours": "", "items": []}
+    meal_dict = {"name": "fake_name", "hours": "", "items": []}
     for item in meal:
         item = BeautifulSoup(str(item), 'html.parser')
         item_name = item.span
@@ -37,7 +37,7 @@ for meal in [breakfast, lunch, dinner]:
         item_name = item_name.get_text().strip()
         item = {"name": item_name, "icons": icon_titles, "calories": calories}
         meal_dict["items"].append(item)
-    meals.append({"meal": meal_dict})
+    meals.append(meal_dict)
 
 data = json.dumps(meals, sort_keys=True, indent=4, separators=(',', ': '))
 
