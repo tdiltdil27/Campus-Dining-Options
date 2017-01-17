@@ -4,7 +4,7 @@
 
 This application will display the operating hours of the dining options on the Rose-Hulman Institute of Technology campus as well as the daily menu for the cafeteria.
 
-### Scaping Data
+### Scraping Data
 
 We wrote a python script that scrapes http://rose-hulman.cafebonappetit.com/ for our application data.
 
