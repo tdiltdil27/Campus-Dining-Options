@@ -10,10 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
     private MealTimeAdapter mAdapter;
+    private String currentDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        currentDate = "Today, " + Calendar.getInstance().get(Calendar.DAY_OF_WEEK)+ "/" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH)+"/"+Calendar.getInstance().get(Calendar.YEAR);
+        setTitle(currentDate);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -53,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

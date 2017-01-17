@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dilta on 1/15/2017.
@@ -13,35 +14,43 @@ public class MealTime {
 
 
     private String name;
-    private int[] mTime = {9,10};
     private String hours;
-    private ArrayList<Food> items;
+    private List<Food> items;
 
     public MealTime() {
 
     }
 
     public String getFoods() {
-        String foodString = null;
+        String foodString = "";
         for(int i = 0 ; i < items.size(); i++) {
-            foodString = foodString + items.get(i) + "\n";
+            foodString = foodString + items.get(i).getName() + "\n";
         }
         return foodString;
     }
 
-    public int[] getTime() {
-        return mTime;
+    public void setHours(String hours) {
+        this.hours = hours;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public List<Food> getItems() {
+        return items;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setFood(ArrayList<Food> items) {
+    public void setItems(ArrayList<Food> items) {
         this.items = items;
     }
 
-    public void setTime(int[] mTime) {
-        this.mTime = mTime;
-    }
 }
