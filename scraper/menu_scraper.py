@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import dryscrape
 import json
+import re
 
 url = "http://rose-hulman.cafebonappetit.com/"
 
@@ -19,12 +20,31 @@ for i in range(1, 5):
 
 heading_selector = ".daypart-header .panel-title"
 items_selector = "article .daypart-menu .column article"
+hours_selector = "#panel-cafe-hours .all-cafe-hours li"
 
 meal_panels = list()
 headers = list()
 for meal_panel in daypart_menu_panels:
     meal_panels.append(soup.select(meal_panel + " " + items_selector))
     headers.append(soup.select(meal_panel + " " +  heading_selector))
+
+# get the hours of each meal
+hours_panel = soup.select(hours_selector)
+hours_json = BeautifulSoup(str(hours_panel), 'html.parser')
+hours_json = hours_json.li['data-json']
+
+hours_json = json.loads(hours_json)
+
+meal_hours = list()
+for i in range(len(meal_panels)):
+    # only want the HH:MM am - HH:MM pm part
+    hours_text = hours_json['dayparts'][i]['status']
+    match = re.search('\d{1,2}:\d{2}.*-.*\d{1,2}:\d{2}_\D{2}', hours_text)
+
+    if match:
+        hours = match.string[match.start():match.end()]
+        hours = hours.replace("_", " ")
+        meal_hours.append(hours)
 
 meals = []
 
@@ -33,6 +53,8 @@ for i in range(len(meal_panels)):
     meal_dict = {"name": "", "hours": "", "items": []}
     meal_name = BeautifulSoup(str(headers[i]), 'html.parser')
     meal_dict["name"] = meal_name.h2.get_text()
+
+    meal_dict['hours'] = meal_hours[i]
 
     # get each item's name, icons, and calories
     for item in meal_panels[i]:
