@@ -10,7 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        currentDate = "Today, " + Calendar.getInstance().get(Calendar.DAY_OF_WEEK)+ "/" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH)+"/"+Calendar.getInstance().get(Calendar.YEAR);
+        Calendar calendar = GregorianCalendar.getInstance();
+        currentDate = "Today, " + (calendar.get(Calendar.MONTH)+1) + "/" + calendar.get(Calendar.DAY_OF_MONTH)+"/"+ calendar.get(Calendar.YEAR);
         setTitle(currentDate);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
