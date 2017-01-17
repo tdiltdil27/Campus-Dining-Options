@@ -76,6 +76,6 @@ for i in range(len(meal_panels)):
 
 data = json.dumps(meals, sort_keys=True, indent=4, separators=(',', ': '))
 
-f = open('data.json', 'w')
+f = open('../sample_data/data.json', 'w')
 f.write(data)
 f.close()
