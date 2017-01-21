@@ -6,7 +6,6 @@ from menu_scraper import get_cafe_menu
 
 app = Flask(__name__)
 
-#@app.route('/')
 @app.route('/cafe/<date>/')
 def get_todays_menu(date=""):
     data = get_cafe_menu(date)

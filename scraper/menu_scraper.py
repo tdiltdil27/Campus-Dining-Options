@@ -1,22 +1,23 @@
 from bs4 import BeautifulSoup
-import dryscrape
 import json
 import re
-
+import sys
+from selenium import webdriver
 
 def get_cafe_menu(date):
     url = "http://rose-hulman.cafebonappetit.com/cafe/"
-    session = dryscrape.Session()
+
+    driver = webdriver.PhantomJS()
+
     url = url + date
     print("Requesting " + url)
-
+    driver.get(url)
     print("Retrieving page...")
-    session.visit(url)
 
     print("Scraping meal information...")
-    menu_page = session.body()
+    menu_page = driver.page_source
+    driver.close()
     soup = BeautifulSoup(menu_page, 'html.parser')
-    print(soup)
 
     daypart_menu_panels = list()
     for i in range(1, 5):
@@ -86,10 +87,4 @@ def get_cafe_menu(date):
             meal_dict["items"].append(item)
         meals.append(meal_dict)
 
-    #return json.dumps(meals, sort_keys=True, indent=4, separators=(',', ': '))
-    print(meals)
     return meals
-
-    #f = open('../sample_data/data.json', 'w')
-    #f.write(data)
-    #f.close()
