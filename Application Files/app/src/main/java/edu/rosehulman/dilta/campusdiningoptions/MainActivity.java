@@ -1,8 +1,13 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,13 +16,17 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MealTimeAdapter mAdapter;
     private String currentDate;
+    private int numPages = 2;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
+    private MealTimeAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
         currentDate = "Today, " + (calendar.get(Calendar.MONTH)+1) + "/" + calendar.get(Calendar.DAY_OF_MONTH)+"/"+ calendar.get(Calendar.YEAR);
         setTitle(currentDate);
 
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+        mAdapter = new MealTimeAdapter(this, recyclerView);
+        recyclerView.setAdapter(mAdapter);
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mAdapter);
+
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -39,11 +57,12 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        mAdapter = new MealTimeAdapter(this, recyclerView);
-        recyclerView.setAdapter(mAdapter);
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+
     }
 
     @Override
@@ -67,4 +86,52 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        private MealTimeAdapter mAdapter;
+        private Context mContext;
+
+        public SectionsPagerAdapter(FragmentManager fm, MealTimeAdapter adapter) {
+            super(fm);
+            mAdapter = adapter;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            if(position==0) {
+
+                return MealsFragment.newInstance(mAdapter);
+
+            } else if(position==1) {
+
+                return MealsFragment.newInstance(mAdapter);
+//                return HoursFragment.newInstance();
+            } else {
+                return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            // Show total pages
+            return numPages;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            if(position == 0) {
+                return "Cafe Meal Times";
+            } else if (position == 1) {
+                return "All Hours";
+            } else {
+                return null;
+            }
+        }
+    }
+
 }
