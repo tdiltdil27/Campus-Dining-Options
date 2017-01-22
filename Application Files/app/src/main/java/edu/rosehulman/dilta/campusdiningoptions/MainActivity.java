@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -40,13 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setTitle(currentDate);
 
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        mAdapter = new MealTimeAdapter(this, recyclerView);
-        recyclerView.setAdapter(mAdapter);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mAdapter);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
 
     }
 
@@ -90,12 +87,10 @@ public class MainActivity extends AppCompatActivity {
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private MealTimeAdapter mAdapter;
         private Context mContext;
 
-        public SectionsPagerAdapter(FragmentManager fm, MealTimeAdapter adapter) {
+        public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-            mAdapter = adapter;
         }
 
         @Override
@@ -104,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             if(position==0) {
 
-                return MealsFragment.newInstance(mAdapter);
+
+                return MealsFragment.newInstance();
 
             } else if(position==1) {
 
-                return MealsFragment.newInstance(mAdapter);
-//                return HoursFragment.newInstance();
+                return HoursFragment.newInstance();
             } else {
                 return null;
             }
