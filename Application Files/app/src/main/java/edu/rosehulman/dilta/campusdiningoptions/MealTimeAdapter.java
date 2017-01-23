@@ -1,6 +1,8 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
  * Created by dilta on 1/15/2017.
  */
 
-public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHolder>{
+public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHolder> implements Parcelable{
 
     private ArrayList<MealTime> mealTimes;
     private Context mContext;
@@ -26,6 +28,21 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         mView = view;
 
     }
+
+    protected MealTimeAdapter(Parcel in) {
+    }
+
+    public static final Creator<MealTimeAdapter> CREATOR = new Creator<MealTimeAdapter>() {
+        @Override
+        public MealTimeAdapter createFromParcel(Parcel in) {
+            return new MealTimeAdapter(in);
+        }
+
+        @Override
+        public MealTimeAdapter[] newArray(int size) {
+            return new MealTimeAdapter[size];
+        }
+    };
 
     @Override
     public MealTimeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -47,6 +64,15 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
     @Override
     public int getItemCount() {
         return mealTimes.size();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

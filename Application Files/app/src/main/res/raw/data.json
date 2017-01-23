@@ -1,159 +1,212 @@
 [
     {
-        "hours": "",
-        "items": [
+        "name": "Union",
+        "mealTimes": [
             {
-                "calories": "[180 cal.]",
-                "icons": [
-                    "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                "hours": "7:00 am - 10:00 am",
+                "items": [
+                    {
+                        "calories": "[180 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs",
+                            "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                        ],
+                        "name": "scrambled eggs"
+                    },
+                    {
+                        "calories": "[280 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "nutella stuffed french toast"
+                    },
+                    {
+                        "calories": "[100 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs",
+                            "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                        ],
+                        "name": "garlic-butter southwest breakfast potatoes"
+                    },
+                    {
+                        "calories": "[370 cal.]",
+                        "icons": [],
+                        "name": "pork breakfast sausage links"
+                    },
+                    {
+                        "calories": "[190 cal.]",
+                        "icons": [
+                            "Vegan: Contains absolutely no animal or dairy products.",
+                            "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                        ],
+                        "name": "spinach tofu scramble"
+                    },
+                    {
+                        "calories": "[130 cal.]",
+                        "icons": [
+                            "Vegan: Contains absolutely no animal or dairy products."
+                        ],
+                        "name": "old-fashioned oatmeal"
+                    }
                 ],
-                "name": "scrambled eggs"
+                "name": "Breakfast Specials"
             },
             {
-                "calories": "[350 cal.]",
-                "icons": [],
-                "name": "texas french toast"
+                "hours": "11:00 am - 2:00 pm",
+                "items": [
+                    {
+                        "calories": "[6450 cal.]",
+                        "icons": [],
+                        "name": "citrus parsley tilapia"
+                    },
+                    {
+                        "calories": "[650 cal.]",
+                        "icons": [],
+                        "name": "maple glazed ham"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [
+                            "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                        ],
+                        "name": "grilled italian sausage"
+                    },
+                    {
+                        "calories": "[370 cal.]",
+                        "icons": [
+                            "Farm to Fork: Contains seasonal, minimally processed ingredients from a local farm, ranch, or fishing boat."
+                        ],
+                        "name": "Fischer Farms beef burger"
+                    },
+                    {
+                        "calories": "[340 cal.]",
+                        "icons": [
+                            "Vegan: Contains absolutely no animal or dairy products."
+                        ],
+                        "name": "house-made bean burger"
+                    },
+                    {
+                        "calories": "[170 cal.]",
+                        "icons": [
+                            "Vegan: Contains absolutely no animal or dairy products."
+                        ],
+                        "name": "french fries"
+                    },
+                    {
+                        "calories": "[160 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "cheese pizza"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "marinated vegetable pizza"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [],
+                        "name": "bbq chicken calzone"
+                    },
+                    {
+                        "calories": "[130 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "glazed cinnamon breadsticks"
+                    }
+                ],
+                "name": "Lunch Specials"
             },
             {
-                "calories": "[250 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products.",
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                "hours": "5:00 pm - 8:00 pm",
+                "items": [
+                    {
+                        "calories": "[890 cal.]",
+                        "icons": [],
+                        "name": "herb roasted chicken with eggplant tomato sauce"
+                    },
+                    {
+                        "calories": "[1330 cal.]",
+                        "icons": [],
+                        "name": "tortellini bolognese"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [
+                            "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                        ],
+                        "name": "grilled italian sausage"
+                    },
+                    {
+                        "calories": "[340 cal.]",
+                        "icons": [
+                            "Vegan: Contains absolutely no animal or dairy products."
+                        ],
+                        "name": "house-made bean burger"
+                    },
+                    {
+                        "calories": "[200 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "crispy buffalo cauliflower"
+                    },
+                    {
+                        "calories": "[170 cal.]",
+                        "icons": [
+                            "Vegan: Contains absolutely no animal or dairy products."
+                        ],
+                        "name": "french fries"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [],
+                        "name": "roasted pepper and mozzarella chicken sandwich"
+                    },
+                    {
+                        "calories": "[160 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "cheese pizza"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "marinated vegetable pizza"
+                    },
+                    {
+                        "calories": "[]",
+                        "icons": [],
+                        "name": "bbq chicken calzone"
+                    },
+                    {
+                        "calories": "[130 cal.]",
+                        "icons": [
+                            "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
+                        ],
+                        "name": "glazed cinnamon breadsticks"
+                    }
                 ],
-                "name": "sweet potato tots"
+                "name": "Dinner Specials"
             },
             {
-                "calories": "[180 cal.]",
-                "icons": [
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
+                "hours": "9:00 pm - 11:00 pm",
+                "items": [
+                    {
+                        "calories": "[]",
+                        "icons": [],
+                        "name": "three cheese and beef lasagna"
+                    }
                 ],
-                "name": "pork breakfast sausage"
-            },
-            {
-                "calories": "[130 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products."
-                ],
-                "name": "old-fashioned oatmeal"
+                "name": "Late Night Specials"
             }
-        ],
-        "name": "fake_name"
-    },
-    {
-        "hours": "",
-        "items": [
-            {
-                "calories": "[180 cal.]",
-                "icons": [
-                    "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
-                ],
-                "name": "scrambled eggs"
-            },
-            {
-                "calories": "[350 cal.]",
-                "icons": [],
-                "name": "texas french toast"
-            },
-            {
-                "calories": "[250 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products.",
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
-                ],
-                "name": "sweet potato tots"
-            },
-            {
-                "calories": "[180 cal.]",
-                "icons": [
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
-                ],
-                "name": "pork breakfast sausage"
-            },
-            {
-                "calories": "[530 cal.]",
-                "icons": [
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
-                ],
-                "name": "grilled chipotle lime pork chops"
-            },
-            {
-                "calories": "[130 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products."
-                ],
-                "name": "old-fashioned oatmeal"
-            },
-            {
-                "calories": "[230 cal.]",
-                "icons": [],
-                "name": "cream of broccoli soup"
-            }
-        ],
-        "name": "fake_name"
-    },
-    {
-        "hours": "",
-        "items": [
-            {
-                "calories": "[510 cal.]",
-                "icons": [],
-                "name": "carbonara pasta with cheese tortellini, ham, peas and tomatoes"
-            },
-            {
-                "calories": "[520 cal.]",
-                "icons": [
-                    "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs"
-                ],
-                "name": "roasted vegetable tortellini with parmesan pesto"
-            },
-            {
-                "calories": "[170 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products."
-                ],
-                "name": "french fries"
-            },
-            {
-                "calories": "[340 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products."
-                ],
-                "name": "house-made bean burger"
-            },
-            {
-                "calories": "[]",
-                "icons": [],
-                "name": "meatball sub"
-            },
-            {
-                "calories": "[350 cal.]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products."
-                ],
-                "name": "parmesan roasted cheesy cauliflower sub"
-            },
-            {
-                "calories": "[230 cal.]",
-                "icons": [],
-                "name": "cream of broccoli soup"
-            },
-            {
-                "calories": "[]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products.",
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
-                ],
-                "name": "strawberrry- banana-pineapple"
-            },
-            {
-                "calories": "[]",
-                "icons": [
-                    "Vegan: Contains absolutely no animal or dairy products.",
-                    "Made without Gluten-Containing Ingredients: Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are \\u201cgluten-free,\\u201d as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients."
-                ],
-                "name": "honeydew"
-            }
-        ],
-        "name": "fake_name"
+        ]
     }
 ]
