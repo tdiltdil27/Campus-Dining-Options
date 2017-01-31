@@ -1,6 +1,7 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dilta on 1/15/2017.
@@ -17,15 +23,19 @@ import java.util.ArrayList;
 
 public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> implements Parcelable{
 
-    private ArrayList<Location> mLocations;
+    private List<Location> mLocations;
     private Context mContext;
     private RecyclerView mView;
+    private final static String ARG_URL = "https://campus-meal-scraper.herokuapp.com/locations/%d-%s-%s/";
 
-    public HoursAdapter(Context context, RecyclerView view) {
+
+    public HoursAdapter(MainActivity context, RecyclerView view) {
 
         mContext = context;
-        mLocations = (ArrayList) SampleUtil.loadLocationsFromJsonArray(mContext);
+        mLocations = new ArrayList<Location>();
         mView = view;
+        new getLocationsTask().execute(String.format(ARG_URL, context.getYear(), context.getMonth()<10?"0"+context.getMonth():context.getMonth(), context.getDay()<10?"0"+context.getDay():context.getDay()));
+
 
     }
 
@@ -91,6 +101,29 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
 
             mNameView = (TextView) itemView.findViewById(R.id.name_view);
             mTimeView = (TextView) itemView.findViewById(R.id.hours_view);
+        }
+    }
+
+    public class getLocationsTask extends AsyncTask<String, Void, List<Location>> {
+
+        public getLocationsTask() {
+        }
+
+        @Override
+        protected List<Location> doInBackground(String... urlStrings) {
+            List<Location> locations = new ArrayList<Location>();
+            String urlString = urlStrings[0];
+            try {
+                locations = new ObjectMapper().readValue(new URL(urlString), List.class);
+            } catch (IOException e) {
+
+            }
+            return locations;
+        }
+        @Override
+        protected void onPostExecute(List<Location> locations) {
+            super.onPostExecute(locations);
+            mLocations = locations;
         }
     }
 }

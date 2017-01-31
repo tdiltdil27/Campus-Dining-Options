@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     private int numPages = 2;
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    private MealTimeAdapter mAdapter;
 
     private DatePickerDialog datePicker;
 
@@ -49,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private int mCurrentMonth;
     private int mCurrentDay;
 
-    private int mYear;
-    private int mMonth;
-    private int mDay;
+    public int mYear;
+    public int mMonth;
+    public int mDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,6 +198,16 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         }
+    }
+
+    public int getYear() {
+        return mYear;
+    }
+    public int getDay() {
+        return mDay;
+    }
+    public int getMonth() {
+        return mMonth;
     }
 
 }

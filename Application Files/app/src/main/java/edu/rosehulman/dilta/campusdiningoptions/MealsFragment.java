@@ -41,7 +41,7 @@ public class MealsFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
-        mAdapter = new MealTimeAdapter(getActivity(), recyclerView);
+        mAdapter = new MealTimeAdapter((MainActivity) getContext(), recyclerView);
         recyclerView.setAdapter(mAdapter);
 
         return rootView;

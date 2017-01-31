@@ -32,7 +32,7 @@ public class HoursFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
-        mAdapter = new HoursAdapter(getActivity(), recyclerView);
+        mAdapter = new HoursAdapter((MainActivity) getContext(), recyclerView);
         recyclerView.setAdapter(mAdapter);
 
         return rootView;
