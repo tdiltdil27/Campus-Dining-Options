@@ -10,12 +10,25 @@ We wrote a python script that scrapes http://rose-hulman.cafebonappetit.com/ for
 
 It can currently:
 - get the avalable name and time for each meal
-- get the daily menu items from each meal offered in the union
-  cafeteria
+- get the daily menu items from each meal offered in all dining options
+  across Rose-Hulmans campus
 - each menu item includes its title, amount of calories and information
   on whether it is vegetarian, vegan or gluten free.
 
 This data is then formatted into JSON to be read in by our android app.
 
-The goal is to make a simple api backend hosted somewhere that can serve
-up-to-date data to the android app. Firebase?
+We exposed a public API that serves this JSON data available at
+https://campus-meal-scraper.herokuapp.com/locations/YYYY-MM-DD/
+
+To get all meal information for the current date, replace
+YYYY-MM-DD with the appropriate date. For example, to get meal menu
+information for January 31st, 2017, go to
+https://campus-meal-scraper.herokuapp.com/locations/2017-01-31/
+
+*Note: The API is currently really slow to respond because the scrapped
+data is not cached and is retrieved on each request. This will be
+addressed shortly.*
+
+We moved the scrapper to a separate repository to make it easy to deploy
+to Heroku. You can find it at
+https://github.com/sbrand83/campus-meal-scraper.
