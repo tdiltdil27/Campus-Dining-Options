@@ -14,4 +14,5 @@
     <string name="action_calendar">Calendar</string>
     <string name="cafe_menu_title">Cafe Menu</string>
     <string name="location_info">Location Info</string>
+    <string name="action_refresh">Refresh</string>
 </resources>

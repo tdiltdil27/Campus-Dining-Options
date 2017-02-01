@@ -122,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
             createCalendarDialog();
             return true;
+        } else if (id == R.id.action_refresh) {
+            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().notifyDataSetChanged();
+            mSectionsPagerAdapter.mHoursFragment.getAdapter().notifyDataSetChanged();
         }
 
         return super.onOptionsItemSelected(item);
