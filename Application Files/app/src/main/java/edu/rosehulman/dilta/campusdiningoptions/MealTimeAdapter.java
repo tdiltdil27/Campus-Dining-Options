@@ -22,13 +22,12 @@ import java.util.List;
  * Created by dilta on 1/15/2017.
  */
 
-public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHolder> implements Parcelable{
+public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHolder> implements Parcelable {
 
     private static final String ARG_UNION = "Union Cafe";
     private List<MealTime> mMealTimes;
     private MainActivity mContext;
     private RecyclerView mView;
-    private final static String ARG_URL = "https://campus-meal-scraper.herokuapp.com/locations/%d-%s-%s/";
 
     public MealTimeAdapter(MainActivity context, RecyclerView view) {
 
@@ -36,8 +35,6 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 //        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
         mView = view;
         mMealTimes = new ArrayList<MealTime>();
-        new getLocationsTask().execute(String.format(ARG_URL, context.getYear(), context.getMonth()<10?"0"+context.getMonth():context.getMonth()+"", context.getDay()<10?"0"+context.getDay():context.getDay()+""));
-
 
     }
 
@@ -56,6 +53,10 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         }
     };
 
+    public void setData(List mealTimes) {
+        mMealTimes = mealTimes;
+    }
+
     @Override
     public MealTimeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -66,10 +67,9 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
     @Override
     public void onBindViewHolder(MealTimeAdapter.ViewHolder holder, int position) {
         MealTime name = mMealTimes.get(position);
+
         holder.mNameView.setText(name.getName());
-
         holder.mTimeView.setText(name.getHours());
-
         holder.mFoodView.setText(name.getFoods());
     }
 
@@ -101,36 +101,4 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         }
     }
 
-    public class getLocationsTask extends AsyncTask<String, Void, List<MealTime>> {
-
-        public getLocationsTask() { }
-
-        @Override
-        protected List<MealTime> doInBackground(String... urlStrings) {
-            List<Location> locations = new ArrayList<Location>();
-            String urlString = urlStrings[0];
-            try {
-                locations = new ObjectMapper().readValue(new URL(urlString), new TypeReference<List<Location>>() {});
-            } catch(IOException e) {
-
-            }
-            List<MealTime> mealTimes = new ArrayList<MealTime>();
-
-            for(int i = 0; i < locations.size(); i++) {
-                if(locations.get(i).getName().equals(ARG_UNION)) {
-                    mealTimes = locations.get(i).getMealTimes();
-                }
-            }
-            return mealTimes;
-        }
-        @Override
-        protected void onPostExecute(List<MealTime> mealTimes) {
-            super.onPostExecute(mealTimes);
-            onMealTimesLoaded(mealTimes);
-        }
-
-        public void onMealTimesLoaded(List<MealTime> mealTimes) {
-            mMealTimes = mealTimes;
-        }
-    }
 }

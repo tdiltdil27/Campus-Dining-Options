@@ -47,4 +47,8 @@ public class MealsFragment extends Fragment {
         return rootView;
     }
 
+    public MealTimeAdapter getAdapter() {
+        return mAdapter;
+    }
+
 }

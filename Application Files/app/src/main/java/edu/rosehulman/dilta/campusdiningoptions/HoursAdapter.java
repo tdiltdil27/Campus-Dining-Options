@@ -25,9 +25,8 @@ import java.util.List;
 public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> implements Parcelable{
 
     private List<Location> mLocations;
-    private Context mContext;
+    private MainActivity mContext;
     private RecyclerView mView;
-    private final static String ARG_URL = "https://campus-meal-scraper.herokuapp.com/locations/%d-%s-%s/";
 
 
     public HoursAdapter(MainActivity context, RecyclerView view) {
@@ -35,7 +34,6 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
         mContext = context;
         mLocations = new ArrayList<Location>();
         mView = view;
-        new getLocationsTask().execute(String.format(ARG_URL, context.getYear(), context.getMonth()<10?"0"+context.getMonth():context.getMonth(), context.getDay()<10?"0"+context.getDay():context.getDay()));
 
 
     }
@@ -54,6 +52,10 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
             return new MealTimeAdapter[size];
         }
     };
+
+    public void setData(List locations) {
+        mLocations = locations;
+    }
 
     @Override
     public HoursAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -105,30 +107,5 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
         }
     }
 
-    public class getLocationsTask extends AsyncTask<String, Void, List<Location>> {
 
-        public getLocationsTask() {
-        }
-
-        @Override
-        protected List<Location> doInBackground(String... urlStrings) {
-            List<Location> locations = new ArrayList<Location>();
-            String urlString = urlStrings[0];
-            try {
-                locations = new ObjectMapper().readValue(new URL(urlString), new TypeReference<List<Location>>() {});
-            } catch (IOException e) {
-
-            }
-            return locations;
-        }
-        @Override
-        protected void onPostExecute(List<Location> locations) {
-            super.onPostExecute(locations);
-            onLocationsLoaded(locations);
-        }
-
-        public void onLocationsLoaded(List<Location> locations) {
-            mLocations = locations;
-        }
-    }
 }

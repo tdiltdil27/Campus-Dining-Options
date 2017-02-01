@@ -3,6 +3,7 @@ package edu.rosehulman.dilta.campusdiningoptions;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,11 +25,17 @@ import android.view.MenuItem;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
@@ -36,6 +43,10 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 public class MainActivity extends AppCompatActivity {
 
     private static final String CALENDAR_DIALOG_TITLE = "Choose a date";
+    private static final String ARG_UNION = "Union Cafe";
+    private final static String ARG_URL = "https://campus-meal-scraper.herokuapp.com/locations/%d-%s-%s/";
+
+
     private String currentDate;
     private String focusedDate;
     private int numPages = 2;
@@ -64,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
+        getData();
+
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -71,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+    }
+
+    private void getData() {
+        new getLocationsTask().execute(String.format(ARG_URL, getYear(), getMonth()<10?"0"+getMonth():getMonth(), getDay()<10?"0"+getDay():getDay()));
     }
 
     private void setDate() {
@@ -126,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 mDay = datePicker.getDatePicker().getDayOfMonth();
                 mYear = datePicker.getDatePicker().getYear();
                 mMonth = datePicker.getDatePicker().getMonth()+1;
-
+                getData();
                 updateTitle();
             }
         });
@@ -144,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
         Calendar cal = GregorianCalendar.getInstance();
-        cal.set(mYear-1900, mMonth, mDay);
+        cal.set(mYear, mMonth, mDay);
         String dayOfTheWeek = sdf.format(cal.getTime());
 
         if(focusedDate.equals(currentDate)) {
@@ -158,7 +175,8 @@ public class MainActivity extends AppCompatActivity {
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private Context mContext;
+        public MealsFragment mMealTimeFragment;
+        public HoursFragment mHoursFragment;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -169,13 +187,12 @@ public class MainActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             if(position==0) {
-
-
-                return MealsFragment.newInstance();
+                mMealTimeFragment = MealsFragment.newInstance();
+                return mMealTimeFragment;
 
             } else if(position==1) {
-
-                return HoursFragment.newInstance();
+                mHoursFragment = HoursFragment.newInstance();
+                return mHoursFragment;
             } else {
                 return null;
             }
@@ -208,6 +225,46 @@ public class MainActivity extends AppCompatActivity {
     }
     public int getMonth() {
         return mMonth;
+    }
+
+    public class getLocationsTask extends AsyncTask<String, Void, List<Location>> {
+
+        public getLocationsTask() {
+        }
+
+        @Override
+        protected List<Location> doInBackground(String... urlStrings) {
+            List<Location> locations = new ArrayList<Location>();
+            String urlString = urlStrings[0];
+            try {
+                locations = new ObjectMapper().readValue(new URL(urlString), new TypeReference<List<Location>>() {});
+            } catch (IOException e) {
+
+            }
+            return locations;
+        }
+        @Override
+        protected void onPostExecute(List<Location> locations) {
+            super.onPostExecute(locations);
+            onLocationsLoaded(locations);
+        }
+
+        public void onLocationsLoaded(List<Location> locations) {
+            mSectionsPagerAdapter.mHoursFragment.getAdapter().setData(locations);
+            mSectionsPagerAdapter.mHoursFragment.getAdapter().notifyDataSetChanged();
+
+
+            List<MealTime> mealTimes = new ArrayList<>();
+
+            for(int i = 0; i < locations.size(); i++) {
+                if(locations.get(i).getName().equals(ARG_UNION)) {
+                    mealTimes = locations.get(i).getMealTimes();
+                }
+            }
+
+            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().setData(mealTimes);
+            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().notifyDataSetChanged();
+        }
     }
 
 }

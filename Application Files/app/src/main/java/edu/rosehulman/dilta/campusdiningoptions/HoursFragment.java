@@ -38,4 +38,8 @@ public class HoursFragment extends Fragment {
         return rootView;
     }
 
+    public HoursAdapter getAdapter() {
+        return mAdapter;
+    }
+
 }
