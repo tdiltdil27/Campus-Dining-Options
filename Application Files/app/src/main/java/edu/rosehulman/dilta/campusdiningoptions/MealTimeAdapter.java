@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHolder> implements Parcelable{
 
-    private static final String ARG_UNION = "Union";
+    private static final String ARG_UNION = "Union Cafe";
     private List<MealTime> mMealTimes;
     private MainActivity mContext;
     private RecyclerView mView;
@@ -35,7 +36,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 //        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
         mView = view;
         mMealTimes = new ArrayList<MealTime>();
-        new getLocationsTask().execute(String.format(ARG_URL, context.getYear(), context.getMonth()<10?"0"+context.getMonth():context.getMonth(), context.getDay()<10?"0"+context.getDay():context.getDay()));
+        new getLocationsTask().execute(String.format(ARG_URL, context.getYear(), context.getMonth()<10?"0"+context.getMonth():context.getMonth()+"", context.getDay()<10?"0"+context.getDay():context.getDay()+""));
 
 
     }
@@ -109,7 +110,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
             List<Location> locations = new ArrayList<Location>();
             String urlString = urlStrings[0];
             try {
-                locations = new ObjectMapper().readValue(new URL(urlString), List.class);
+                locations = new ObjectMapper().readValue(new URL(urlString), new TypeReference<List<Location>>() {});
             } catch(IOException e) {
 
             }
@@ -125,8 +126,11 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         @Override
         protected void onPostExecute(List<MealTime> mealTimes) {
             super.onPostExecute(mealTimes);
-            mMealTimes = mealTimes;
+            onMealTimesLoaded(mealTimes);
         }
 
+        public void onMealTimesLoaded(List<MealTime> mealTimes) {
+            mMealTimes = mealTimes;
+        }
     }
 }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -114,7 +115,7 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
             List<Location> locations = new ArrayList<Location>();
             String urlString = urlStrings[0];
             try {
-                locations = new ObjectMapper().readValue(new URL(urlString), List.class);
+                locations = new ObjectMapper().readValue(new URL(urlString), new TypeReference<List<Location>>() {});
             } catch (IOException e) {
 
             }
@@ -123,6 +124,10 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
         @Override
         protected void onPostExecute(List<Location> locations) {
             super.onPostExecute(locations);
+            onLocationsLoaded(locations);
+        }
+
+        public void onLocationsLoaded(List<Location> locations) {
             mLocations = locations;
         }
     }
