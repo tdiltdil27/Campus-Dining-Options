@@ -25,10 +25,6 @@ YYYY-MM-DD with the appropriate date. For example, to get meal menu
 information for January 31st, 2017, go to
 https://campus-meal-scraper.herokuapp.com/locations/2017-01-31/
 
-*Note: The API is currently really slow to respond because the scrapped
-data is not cached and is retrieved on each request. This will be
-addressed shortly.*
-
 We moved the scrapper to a separate repository to make it easy to deploy
 to Heroku. You can find it at
 https://github.com/sbrand83/campus-meal-scraper.
