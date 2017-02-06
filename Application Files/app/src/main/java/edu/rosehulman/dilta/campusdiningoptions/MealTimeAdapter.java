@@ -26,14 +26,9 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
     private static final String ARG_UNION = "Union Cafe";
     private List<MealTime> mMealTimes;
-    private MainActivity mContext;
-    private RecyclerView mView;
 
-    public MealTimeAdapter(MainActivity context, RecyclerView view) {
-
-        mContext = context;
+    public MealTimeAdapter() {
 //        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
-        mView = view;
         mMealTimes = new ArrayList<MealTime>();
 
     }

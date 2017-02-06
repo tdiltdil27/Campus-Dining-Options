@@ -131,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_favorites) {
             FavoritesFragment favorites = FavoritesFragment.newInstance();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.container, favorites);
+            ft.replace(R.id.content_main, favorites);
+            ft.addToBackStack("favorites");
             ft.commit();
         }
 

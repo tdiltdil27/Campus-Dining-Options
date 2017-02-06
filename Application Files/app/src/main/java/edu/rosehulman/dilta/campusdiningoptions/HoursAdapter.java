@@ -25,17 +25,10 @@ import java.util.List;
 public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> implements Parcelable{
 
     private List<Location> mLocations;
-    private MainActivity mContext;
-    private RecyclerView mView;
 
 
-    public HoursAdapter(MainActivity context, RecyclerView view) {
-
-        mContext = context;
+    public HoursAdapter() {
         mLocations = new ArrayList<Location>();
-        mView = view;
-
-
     }
 
     protected HoursAdapter(Parcel in) {
