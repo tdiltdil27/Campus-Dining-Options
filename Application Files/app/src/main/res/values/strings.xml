@@ -15,4 +15,7 @@
     <string name="cafe_menu_title">Cafe Menu</string>
     <string name="location_info">Location Info</string>
     <string name="action_refresh">Refresh</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
