@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keepclassmemebers class edu.rosehulman.rosefire.WebLoginActivity {
+    public *;
+}

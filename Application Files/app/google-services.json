@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "645647114760",
+    "firebase_url": "https://campus-dining-options.firebaseio.com",
+    "project_id": "campus-dining-options",
+    "storage_bucket": "campus-dining-options.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645647114760:android:a6f3d00299dc08c0",
+        "android_client_info": {
+          "package_name": "edu.rosehulman.dilta.campusdiningoptions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645647114760-c5bn80hd3spfgdd5gkf63kjd2bhefh58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.rosehulman.dilta.campusdiningoptions",
+            "certificate_hash": "0CC7577797DFD840AAD57C07E7C1B56948D888EE"
+          }
+        },
+        {
+          "client_id": "645647114760-4811q44buno5lht2ejiiv9rrsfospuvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9e65Od8Vs7b1bGbiKV6I3RJjSMLgwhlM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645647114760-4811q44buno5lht2ejiiv9rrsfospuvc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
