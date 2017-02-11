@@ -1,13 +1,22 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 /**
@@ -16,14 +25,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class FavoritesFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
+    private static final String FAVORITES_ADAPTER = "adapter";
 
     private FavoritesAdapter mAdapter;
-
+    private TextView help_message;
 
     public FavoritesFragment() {
         // Required empty public constructor
@@ -36,9 +41,22 @@ public class FavoritesFragment extends Fragment {
      * @return A new instance of fragment FavoritesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FavoritesFragment newInstance() {
+    public static FavoritesFragment newInstance(FavoritesAdapter adapter) {
         FavoritesFragment fragment = new FavoritesFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(FAVORITES_ADAPTER, adapter);
+        fragment.setArguments(bundle);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            this.mAdapter = savedInstanceState.getParcelable(FAVORITES_ADAPTER);
+        } else {
+            this.mAdapter = new FavoritesAdapter();
+        }
     }
 
     @Override
@@ -50,10 +68,52 @@ public class FavoritesFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
-        mAdapter = new FavoritesAdapter();
-        recyclerView.setAdapter(mAdapter);
+        recyclerView.setAdapter(this.mAdapter);
 
+        help_message = (TextView) rootView.findViewById(R.id.favorites_help_message);
+
+        setHasOptionsMenu(true);
         return rootView;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_favorites, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        MainActivity activity = (MainActivity) getActivity();
+
+        if (id == R.id.action_add_favorite) {
+            editFavorite();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void editFavorite() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+        View view = getActivity().getLayoutInflater().inflate(R.layout.edit_favorite, null);
+        dialog.setView(view);
+
+        final EditText food_name = (EditText) view.findViewById(R.id.food_name_edittext);
+
+        dialog.setNegativeButton(android.R.string.cancel, null);
+        dialog.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Food food = new Food();
+                food.setName(food_name.getText().toString());
+                mAdapter.addFavorite(food);
+
+                help_message.setVisibility(View.GONE);
+            }
+        });
+
+        dialog.create().show();
+    }
 }

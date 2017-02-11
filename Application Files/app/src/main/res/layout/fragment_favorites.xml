@@ -7,7 +7,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test text"/>
+        android:id="@+id/favorites_help_message"
+        android:text="@string/favorites_initial_text"
+        android:textSize="24sp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textAlignment="center"
+        android:layout_margin="20px"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"

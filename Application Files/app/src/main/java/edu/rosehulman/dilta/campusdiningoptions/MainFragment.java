@@ -7,9 +7,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -87,6 +91,7 @@ public class MainFragment extends Fragment {
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        setHasOptionsMenu(true);
         return view;
     }
 
@@ -95,6 +100,37 @@ public class MainFragment extends Fragment {
         super.onResume();
         Log.d("MainFrag", "getting data");
         getData();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        MainActivity activity = (MainActivity) getActivity();
+
+        if (id == R.id.action_calendar) {
+
+            activity.createCalendarDialog();
+            return true;
+        } else if (id == R.id.action_refresh) {
+            activity.updateMainFragmentData();
+        } else if (id == R.id.action_favorites) {
+            FavoritesFragment favorites = FavoritesFragment.newInstance(activity.getFavoritesAdapter());
+            FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main, favorites);
+            ft.addToBackStack("favorites");
+            ft.commit();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void getData() {

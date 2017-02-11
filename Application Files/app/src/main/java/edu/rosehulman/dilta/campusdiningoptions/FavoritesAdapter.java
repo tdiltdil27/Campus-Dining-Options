@@ -1,5 +1,7 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +14,28 @@ import java.util.List;
 /**
  * Created by brandsm on 2/5/2017.
  */
-public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> implements Parcelable {
 
     private List<Food> mFavorites;
 
     public FavoritesAdapter() {
         this.mFavorites = new ArrayList<Food>();
     }
+
+    protected FavoritesAdapter(Parcel in) {
+    }
+
+    public static final Creator<FavoritesAdapter> CREATOR = new Creator<FavoritesAdapter>() {
+        @Override
+        public FavoritesAdapter createFromParcel(Parcel in) {
+            return new FavoritesAdapter(in);
+        }
+
+        @Override
+        public FavoritesAdapter[] newArray(int size) {
+            return new FavoritesAdapter[size];
+        }
+    };
 
     @Override
     public FavoritesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,6 +53,25 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     @Override
     public int getItemCount() {
         return this.mFavorites.size();
+    }
+
+    public void addFavorite(Food food) {
+        this.mFavorites.add(0, food);
+        notifyItemInserted(0);
+    }
+
+    public void removeFavorite(int position) {
+        this.mFavorites.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

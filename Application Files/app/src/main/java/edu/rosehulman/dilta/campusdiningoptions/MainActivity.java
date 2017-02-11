@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     private String currentDate;
     private String focusedDate;
 
+    private FavoritesAdapter mFavoritesAdapter;
+
     private DatePickerDialog datePicker;
 
     private int mCurrentYear;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mFavoritesAdapter = new FavoritesAdapter();
+
         setDate();
         updateTitle();
 
@@ -73,10 +77,8 @@ public class MainActivity extends AppCompatActivity {
         ft.replace(R.id.content_main, main);
         ft.commit();
     }
-
-
-
-    private void setDate() {
+    
+    public void setDate() {
         Calendar calendar = GregorianCalendar.getInstance();
         mCurrentMonth = calendar.get(Calendar.MONTH)+1;
         mCurrentDay = calendar.get(Calendar.DAY_OF_MONTH);
@@ -90,38 +92,7 @@ public class MainActivity extends AppCompatActivity {
         focusedDate = "Today, " + (mMonth) + "/" + mDay +"/"+ mYear;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        if (id == R.id.action_calendar) {
-
-            createCalendarDialog();
-            return true;
-        } else if (id == R.id.action_refresh) {
-            updateMainFragmentData();
-        } else if (id == R.id.action_favorites) {
-            FavoritesFragment favorites = FavoritesFragment.newInstance();
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_main, favorites);
-            ft.addToBackStack("favorites");
-            ft.commit();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void createCalendarDialog() {
+    public void createCalendarDialog() {
         datePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -150,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         datePicker.show();
     }
 
-    private void updateTitle() {
+    public void updateTitle() {
         focusedDate = "Today, " + (mMonth) + "/" + mDay +"/"+ mYear;
 
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
@@ -181,5 +152,9 @@ public class MainActivity extends AppCompatActivity {
         if (frag != null) {
             frag.getData();
         }
+    }
+
+    public FavoritesAdapter getFavoritesAdapter() {
+        return this.mFavoritesAdapter;
     }
 }
