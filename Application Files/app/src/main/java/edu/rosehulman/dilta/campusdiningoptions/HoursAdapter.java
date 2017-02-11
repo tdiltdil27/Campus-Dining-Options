@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.ViewHolder> 
 
 
     public HoursAdapter() {
+        Log.d("HoursAdapter", "Created hours adapter");
         mLocations = new ArrayList<Location>();
     }
 

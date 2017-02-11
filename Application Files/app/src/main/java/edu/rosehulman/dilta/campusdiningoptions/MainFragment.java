@@ -33,7 +33,10 @@ public class MainFragment extends Fragment {
     private int numPages = 2;
     private final static String ARG_URL = "https://campus-meal-scraper.herokuapp.com/locations/%d-%s-%s/";
     private static final String ARG_UNION = "Union Cafe";
-    private MainFragment.SectionsPagerAdapter mSectionsPagerAdapter;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+
+    private HoursFragment hoursFragment;
+    private MealsFragment mealsFragment;
     private ViewPager mViewPager;
 
     private List<Location> mLocations;
@@ -63,6 +66,7 @@ public class MainFragment extends Fragment {
 //            mParam2 = getArguments().getString(ARG_PARAM2);
         }
         //getData();
+        Log.d("MainFragment", "onCreate");
     }
 
     @Override
@@ -70,20 +74,26 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         super.onCreateView(inflater, container, savedInstanceState);
+
         Log.d("MainFragment", "onCreateView");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        mSectionsPagerAdapter = new MainFragment.SectionsPagerAdapter(getActivity().getSupportFragmentManager());
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
+
         mViewPager = (ViewPager) view.findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.getAdapter().notifyDataSetChanged();
+
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
         return view;
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        Log.d("MainFrag", "onStart");
+    public void onResume() {
+        super.onResume();
+        Log.d("MainFrag", "getting data");
         getData();
     }
 
@@ -100,13 +110,8 @@ public class MainFragment extends Fragment {
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public MealsFragment mMealTimeFragment;
-        public HoursFragment mHoursFragment;
-
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-            mMealTimeFragment = MealsFragment.newInstance();
-            mHoursFragment = HoursFragment.newInstance();
         }
 
         @Override
@@ -114,9 +119,13 @@ public class MainFragment extends Fragment {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             if(position==0) {
-                return mMealTimeFragment;
+                Log.d("MainFrag", "new instance of mealsfragment");
+                mealsFragment = MealsFragment.newInstance();
+                return mealsFragment;
             } else if(position==1) {
-                return mHoursFragment;
+                Log.d("MainFrag", "new instance of hoursfragment");
+                hoursFragment = HoursFragment.newInstance();
+                return hoursFragment;
             } else {
                 return null;
             }
@@ -167,8 +176,8 @@ public class MainFragment extends Fragment {
 
         public void onLocationsLoaded(List<Location> locations) {
             Log.d("MainFrag", "locationsLoaded");
-            mSectionsPagerAdapter.mHoursFragment.getAdapter().setData(locations);
-            mSectionsPagerAdapter.mHoursFragment.getAdapter().notifyDataSetChanged();
+            hoursFragment.getAdapter().setData(locations);
+            hoursFragment.getAdapter().notifyDataSetChanged();
 
             List<MealTime> mealTimes = new ArrayList<>();
 
@@ -181,8 +190,8 @@ public class MainFragment extends Fragment {
             mLocations = locations;
             mMealTimes = mealTimes;
 
-            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().setData(mealTimes);
-            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().notifyDataSetChanged();
+            mealsFragment.getAdapter().setData(mealTimes);
+            mealsFragment.getAdapter().notifyDataSetChanged();
         }
     }
 }

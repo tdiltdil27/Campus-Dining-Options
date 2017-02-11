@@ -20,17 +20,17 @@ public class MealsFragment extends Fragment {
     private MealTimeAdapter mAdapter;
 
     public MealsFragment() {
-
-
     }
 
     public static MealsFragment newInstance() {
         MealsFragment fragment = new MealsFragment();
-        Bundle args = new Bundle();
-        MealTimeAdapter adapter = new MealTimeAdapter();
-        args.putParcelable(ARG_ADAPTER, adapter);
-        fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.mAdapter = new MealTimeAdapter();
     }
 
     @Override

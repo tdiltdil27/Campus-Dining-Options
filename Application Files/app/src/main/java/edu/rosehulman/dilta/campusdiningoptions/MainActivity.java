@@ -44,15 +44,9 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 public class MainActivity extends AppCompatActivity {
 
     private static final String CALENDAR_DIALOG_TITLE = "Choose a date";
-//    private static final String ARG_UNION = "Union Cafe";
-//    private final static String ARG_URL = "https://campus-meal-scraper.herokuapp.com/locations/%d-%s-%s/";
-
 
     private String currentDate;
     private String focusedDate;
-//    private int numPages = 2;
-//    private SectionsPagerAdapter mSectionsPagerAdapter;
-//    private ViewPager mViewPager;
 
     private DatePickerDialog datePicker;
 
@@ -78,18 +72,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_main, main);
         ft.commit();
-
-//        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        //getData();
-
-        // Set up the ViewPager with the sections adapter.
-//        mViewPager = (ViewPager) findViewById(R.id.container);
-//        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-//        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-//        tabLayout.setupWithViewPager(mViewPager);
-
     }
 
 
@@ -200,100 +182,4 @@ public class MainActivity extends AppCompatActivity {
             frag.getData();
         }
     }
-
-
-//    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-//
-//        public MealsFragment mMealTimeFragment;
-//        public HoursFragment mHoursFragment;
-//
-//        public SectionsPagerAdapter(FragmentManager fm) {
-//            super(fm);
-//        }
-//
-//        @Override
-//        public Fragment getItem(int position) {
-//            // getItem is called to instantiate the fragment for the given page.
-//            // Return a PlaceholderFragment (defined as a static inner class below).
-//            if(position==0) {
-//                mMealTimeFragment = MealsFragment.newInstance();
-//                return mMealTimeFragment;
-//
-//            } else if(position==1) {
-//                mHoursFragment = HoursFragment.newInstance();
-//                return mHoursFragment;
-//            } else {
-//                return null;
-//            }
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            // Show total pages
-//            return numPages;
-//        }
-//
-//        @Override
-//        public CharSequence getPageTitle(int position) {
-//
-//            if(position == 0) {
-//                return "Cafe Menu";
-//            } else if (position == 1) {
-//                return "Location Hours";
-//            } else {
-//                return null;
-//            }
-//        }
-//    }
-//
-//    public int getYear() {
-//        return mYear;
-//    }
-//    public int getDay() {
-//        return mDay;
-//    }
-//    public int getMonth() {
-//        return mMonth;
-//    }
-//
-//    public class getLocationsTask extends AsyncTask<String, Void, List<Location>> {
-//
-//        public getLocationsTask() {
-//        }
-//
-//        @Override
-//        protected List<Location> doInBackground(String... urlStrings) {
-//            List<Location> locations = new ArrayList<Location>();
-//            String urlString = urlStrings[0];
-//            try {
-//                locations = new ObjectMapper().readValue(new URL(urlString), new TypeReference<List<Location>>() {});
-//            } catch (IOException e) {
-//
-//            }
-//            return locations;
-//        }
-//        @Override
-//        protected void onPostExecute(List<Location> locations) {
-//            super.onPostExecute(locations);
-//            onLocationsLoaded(locations);
-//        }
-//
-//        public void onLocationsLoaded(List<Location> locations) {
-//            mSectionsPagerAdapter.mHoursFragment.getAdapter().setData(locations);
-//            mSectionsPagerAdapter.mHoursFragment.getAdapter().notifyDataSetChanged();
-//
-//
-//            List<MealTime> mealTimes = new ArrayList<>();
-//
-//            for(int i = 0; i < locations.size(); i++) {
-//                if(locations.get(i).getName().equals(ARG_UNION)) {
-//                    mealTimes = locations.get(i).getMealTimes();
-//                }
-//            }
-//
-//            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().setData(mealTimes);
-//            mSectionsPagerAdapter.mMealTimeFragment.getAdapter().notifyDataSetChanged();
-//        }
-//    }
-
 }

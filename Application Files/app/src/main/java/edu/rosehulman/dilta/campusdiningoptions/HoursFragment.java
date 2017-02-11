@@ -21,9 +21,6 @@ public class HoursFragment extends Fragment {
 
     public static HoursFragment newInstance() {
         HoursFragment fragment = new HoursFragment();
-//        Bundle args = new Bundle();
-//        args.putParcelable(ARG_ADAPTER, adapter);
-//        fragment.setArguments(args);
         return fragment;
     }
 

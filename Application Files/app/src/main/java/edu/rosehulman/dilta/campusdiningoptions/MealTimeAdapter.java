@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
     public MealTimeAdapter() {
 //        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
+        Log.d("MealsAdapter", "Created meals adapter");
         mMealTimes = new ArrayList<MealTime>();
 
     }
