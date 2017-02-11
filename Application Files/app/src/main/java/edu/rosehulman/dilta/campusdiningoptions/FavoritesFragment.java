@@ -29,6 +29,7 @@ public class FavoritesFragment extends Fragment {
 
     private FavoritesAdapter mAdapter;
     private TextView help_message;
+    private boolean show_help = true;
 
     public FavoritesFragment() {
         // Required empty public constructor
@@ -52,8 +53,12 @@ public class FavoritesFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            this.mAdapter = savedInstanceState.getParcelable(FAVORITES_ADAPTER);
+        Bundle args = getArguments();
+        if (args != null) {
+            this.mAdapter = args.getParcelable(FAVORITES_ADAPTER);
+            if (this.mAdapter.getItemCount() > 0) {
+                this.show_help = false;
+            }
         } else {
             this.mAdapter = new FavoritesAdapter();
         }
@@ -71,6 +76,9 @@ public class FavoritesFragment extends Fragment {
         recyclerView.setAdapter(this.mAdapter);
 
         help_message = (TextView) rootView.findViewById(R.id.favorites_help_message);
+        if (!this.show_help) {
+            help_message.setVisibility(View.GONE);
+        }
 
         setHasOptionsMenu(true);
         return rootView;

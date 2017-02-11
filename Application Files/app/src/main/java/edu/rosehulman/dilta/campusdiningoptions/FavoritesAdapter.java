@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -76,11 +77,20 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
+        private ImageButton removeButton;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             this.name = (TextView) itemView.findViewById(R.id.favorite_text);
+            this.removeButton = (ImageButton) itemView.findViewById(R.id.favorite_delete_button);
+
+            this.removeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    removeFavorite(getAdapterPosition());
+                }
+            });
         }
     }
 }

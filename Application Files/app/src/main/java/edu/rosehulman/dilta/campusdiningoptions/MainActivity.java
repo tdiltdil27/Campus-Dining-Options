@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         ft.replace(R.id.content_main, main);
         ft.commit();
     }
-    
+
     public void setDate() {
         Calendar calendar = GregorianCalendar.getInstance();
         mCurrentMonth = calendar.get(Calendar.MONTH)+1;
