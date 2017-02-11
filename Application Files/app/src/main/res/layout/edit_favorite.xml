@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/edit_favorite">
+
+
+    <TextView
+        android:text="@string/food_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/food_name"
+        android:textSize="32sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:inputType="textPersonName"
+        android:hint="@string/name_hint"
+        android:ems="10"
+        android:id="@+id/food_name_edittext" />
+</LinearLayout>
