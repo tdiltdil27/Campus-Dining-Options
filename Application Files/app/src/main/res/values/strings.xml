@@ -22,4 +22,5 @@
     <string name="food_name">Food</string>
     <string name="name_hint">Eg: Chicken Tenders</string>
     <string name="favorites_initial_text">Add your favorite foods to be notified when they are being served.</string>
+    <string name="favorites_title">Favorites</string>
 </resources>

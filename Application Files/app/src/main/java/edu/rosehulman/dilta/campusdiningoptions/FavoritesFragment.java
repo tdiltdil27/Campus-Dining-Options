@@ -62,6 +62,8 @@ public class FavoritesFragment extends Fragment {
         } else {
             this.mAdapter = new FavoritesAdapter();
         }
+
+        getActivity().setTitle(getResources().getString(R.string.favorites_title));
     }
 
     @Override

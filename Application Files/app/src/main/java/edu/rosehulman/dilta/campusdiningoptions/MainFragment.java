@@ -92,6 +92,8 @@ public class MainFragment extends Fragment {
         tabLayout.setupWithViewPager(mViewPager);
 
         setHasOptionsMenu(true);
+        MainActivity activity = (MainActivity) getActivity();
+        activity.updateTitle();
         return view;
     }
 
