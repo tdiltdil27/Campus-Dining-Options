@@ -46,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+            <state relative-caret-position="90">
+              <caret line="301" column="36" selection-start-line="301" selection-start-column="36" selection-end-line="301" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +71,8 @@
       <file leaf-file-name="MainFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="260" column="88" selection-start-line="260" selection-start-column="88" selection-end-line="260" selection-end-column="88" />
+            <state relative-caret-position="2618">
+              <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
               <folding>
                 <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
               </folding>
@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MealTimeAdapter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MealTimeAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealTimeAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="247">
+              <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -2067,9 +2067,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealTime.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealTimeAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2532,7 +2532,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2542,7 +2542,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47547975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47547975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32622603" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2876,31 +2876,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealTimeAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="247">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="260" column="88" selection-start-line="260" selection-start-column="88" selection-end-line="260" selection-end-column="88" />
+        <state relative-caret-position="2618">
+          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding>
             <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealTimeAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="301" column="36" selection-start-line="301" selection-start-column="36" selection-end-line="301" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

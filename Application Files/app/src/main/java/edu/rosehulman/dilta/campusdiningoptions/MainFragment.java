@@ -175,6 +175,10 @@ public class MainFragment extends Fragment {
         this.favoritesAdapter = favoritesAdapter;
     }
 
+    public void setUserInfo(String path, String user, String uid) {
+
+    }
+
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

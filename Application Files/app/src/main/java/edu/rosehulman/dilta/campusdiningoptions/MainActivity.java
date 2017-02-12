@@ -299,23 +299,25 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         FragmentTransaction ft = fm.beginTransaction();
         fm.popBackStackImmediate();
         ft.commit();
-        getSupportActionBar();
+        getSupportActionBar().show();
     }
 
     private void switchToMainFragment(String path, String user, String uid) {
-        Log.d(Constants.TAG, "starting main fragment");
-        getSupportActionBar().show();
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        mainFragment = MainFragment.newInstance();
-
-        Bundle args = new Bundle();
-        args.putString(Constants.FIREBASE_PATH, path);
-        args.putString(Constants.FIREBASE_USER, uid);
-        args.putString(Constants.FIREBASE_NAME, user);
-        mainFragment.setArguments(args);
-
-        ft.replace(R.id.content_main, mainFragment, "Main");
-        ft.commit();
+//        Log.d(Constants.TAG, "starting main fragment");
+//        getSupportActionBar().show();
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        mainFragment = MainFragment.newInstance();
+//
+//        Bundle args = new Bundle();
+//        args.putString(Constants.FIREBASE_PATH, path);
+//        args.putString(Constants.FIREBASE_USER, uid);
+//        args.putString(Constants.FIREBASE_NAME, user);
+//        mainFragment.setArguments(args);
+//
+//        ft.replace(R.id.content_main, mainFragment, "Main");
+//        ft.commit();
+        onBackPressed();
+        mainFragment.setUserInfo(path, user, uid);
 
     }
 
