@@ -3,6 +3,7 @@ package edu.rosehulman.dilta.campusdiningoptions;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +34,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class MainFragment extends Fragment {
+    private static final String GUEST_TEXT = "a guest";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private int numPages = 2;
@@ -42,9 +45,13 @@ public class MainFragment extends Fragment {
     private HoursFragment hoursFragment;
     private MealsFragment mealsFragment;
     private ViewPager mViewPager;
+    private MainActivity activity;
 
+    private boolean loggedIn;
     private List<Location> mLocations;
     private List<MealTime> mMealTimes;
+    public Menu mMenu;
+    private String username;
 
     public MainFragment() {
         // Required empty public constructor
@@ -65,11 +72,17 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
 //            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
+            username = getArguments().getString(Constants.FIREBASE_NAME);
+        } else {
+            username = null;
         }
         //getData();
+
+        activity = (MainActivity) getActivity();
+        loggedIn = activity.loggedIn();
         Log.d("MainFragment", "onCreate");
     }
 
@@ -82,6 +95,7 @@ public class MainFragment extends Fragment {
         Log.d("MainFragment", "onCreateView");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
 
         mViewPager = (ViewPager) view.findViewById(R.id.container);
@@ -92,7 +106,6 @@ public class MainFragment extends Fragment {
         tabLayout.setupWithViewPager(mViewPager);
 
         setHasOptionsMenu(true);
-        MainActivity activity = (MainActivity) getActivity();
         activity.updateTitle();
         return view;
     }
@@ -107,7 +120,9 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
+        mMenu = menu;
         inflater.inflate(R.menu.menu_main, menu);
+        mMenu.findItem(R.id.login).setTitle(getString(loggedIn?R.string.logout:R.string.action_sign_in));
     }
 
     @Override
@@ -116,7 +131,6 @@ public class MainFragment extends Fragment {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        MainActivity activity = (MainActivity) getActivity();
 
         if (id == R.id.action_calendar) {
 
@@ -130,6 +144,18 @@ public class MainFragment extends Fragment {
             ft.replace(R.id.content_main, favorites);
             ft.addToBackStack("favorites");
             ft.commit();
+        } else if (id == R.id.login) {
+            if(!activity.loggedIn()) {
+                activity.getSupportActionBar().hide();
+                LoginFragment login = new LoginFragment();
+                FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_main, login);
+                ft.addToBackStack("login");
+                ft.commit();
+            } else {
+                activity.logOut();
+                Snackbar.make(getView(), "You have logged out", Snackbar.LENGTH_LONG).show();
+            }
         }
 
         return super.onOptionsItemSelected(item);

@@ -3,8 +3,10 @@ package edu.rosehulman.dilta.campusdiningoptions;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -28,6 +30,15 @@ import android.widget.DatePicker;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,13 +48,18 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
+
+import edu.rosehulman.rosefire.Rosefire;
+import edu.rosehulman.rosefire.RosefireResult;
 
 import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoginFragment.OnLoginListener {
 
     private static final String CALENDAR_DIALOG_TITLE = "Choose a date";
+    private static final String GUEST_TEXT = "a guest";
 
     private String currentDate;
     private String focusedDate;
@@ -60,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
     public int mMonth;
     public int mDay;
 
+    private DatabaseReference mFirebase;
+    private ValueEventListener mListener;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private OnCompleteListener mOnCompleteListener;
+    private FirebaseAuth mAuth;
+
+    private boolean loggedIn;
+    private int RC_ROSEFIRE_LOGIN = 2;
+    private MainFragment mainFragment;
+    private FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,11 +99,37 @@ public class MainActivity extends AppCompatActivity {
         setDate();
         updateTitle();
 
-        MainFragment main = MainFragment.newInstance();
+        loggedIn = false;
+
+        mainFragment = MainFragment.newInstance();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.content_main, main);
+        ft.replace(R.id.content_main, mainFragment);
         ft.commit();
+
+        mAuth = FirebaseAuth.getInstance();
+
+        initializeListeners();
+
+        mFirebase = FirebaseDatabase.getInstance().getReference().child("title");
+
+        mListener = mFirebase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                setTitle((String)dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d(Constants.TAG,"Database error");
+//                mAuth.getInstance().signOut();
+//                switchToLoginFragment();
+            }
+        });
+        if(mFirebase == null) {
+            setTitle(getString(R.string.app_name));
+        }
     }
+
 
     public void setDate() {
         Calendar calendar = GregorianCalendar.getInstance();
@@ -88,8 +141,10 @@ public class MainActivity extends AppCompatActivity {
         mDay = calendar.get(Calendar.DAY_OF_MONTH);
         mYear = calendar.get(Calendar.YEAR);
 
-        currentDate = "Today, " + (mCurrentMonth) + "/" + mCurrentDay +"/"+ mCurrentYear;
-        focusedDate = "Today, " + (mMonth) + "/" + mDay +"/"+ mYear;
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d", Locale.US);
+        Calendar cal = GregorianCalendar.getInstance();
+        cal.set(mCurrentYear, mCurrentMonth-1, mCurrentDay);
+        currentDate = sdf.format(cal.getTime());
     }
 
     public void createCalendarDialog() {
@@ -122,17 +177,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateTitle() {
-        focusedDate = "Today, " + (mMonth) + "/" + mDay +"/"+ mYear;
-
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d", Locale.US);
         Calendar cal = GregorianCalendar.getInstance();
-        cal.set(mYear, mMonth, mDay);
-        String dayOfTheWeek = sdf.format(cal.getTime());
+        cal.set(mYear, mMonth-1, mDay);
+        focusedDate = sdf.format(cal.getTime());
 
         if(focusedDate.equals(currentDate)) {
-
-        } else {
-            focusedDate = dayOfTheWeek + ", " + (mMonth) + "/" + mDay +"/"+ mYear;
+            focusedDate = "Today, " + focusedDate;
         }
         setTitle(focusedDate);
     }
@@ -156,5 +207,118 @@ public class MainActivity extends AppCompatActivity {
 
     public FavoritesAdapter getFavoritesAdapter() {
         return this.mFavoritesAdapter;
+    }
+
+    public boolean loggedIn() {
+        return loggedIn;
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        fm.popBackStackImmediate();
+        ft.commit();
+        Snackbar.make(mainFragment.getView(), "Log In cancelled", Snackbar.LENGTH_LONG).show();
+        getSupportActionBar().show();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    private void initializeListeners() {
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                user = firebaseAuth.getCurrentUser();
+                Log.d(Constants.TAG, "User: " + user);
+                if (user!=null) {
+                    loggedIn = true;
+                    switchToMainFragment("favorites/", user.getDisplayName(), user.getUid());
+                } else {
+//                    switchToLoginFragment();
+                }
+            }
+        };
+
+
+        mOnCompleteListener = new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+                if(!task.isSuccessful()) {
+                    showLoginError("Login failed");
+                }
+            }
+        };
+    }
+
+    @Override
+    public void onRosefireLogin() {
+        Intent signInIntent = Rosefire.getSignInIntent(this, Constants.ROSEFIRE_REGISTRY_TOKEN);
+        startActivityForResult(signInIntent, RC_ROSEFIRE_LOGIN);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == RC_ROSEFIRE_LOGIN) {
+            RosefireResult result = Rosefire.getSignInResultFromIntent(data);
+            if (result.isSuccessful()) {
+                firebaseAuthWithRosefire(result);
+            } else {
+                showLoginError("Rosefire authentication failed.");
+            }
+        }
+    }
+    private void showLoginError(String message) {
+        LoginFragment loginFragment = (LoginFragment) getSupportFragmentManager().findFragmentByTag("login");
+        loginFragment.onLoginError(message);
+    }
+    private void firebaseAuthWithRosefire(RosefireResult result) {
+        mAuth.signInWithCustomToken(result.getToken())
+                .addOnCompleteListener(mOnCompleteListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(mAuthStateListener != null) {
+            mAuth.removeAuthStateListener(mAuthStateListener);
+        }
+    }
+
+    @Override
+    public void onLogin(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, mOnCompleteListener);
+    }
+    private void switchToLoginFragment() {
+        getSupportActionBar().hide();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.content_main, new LoginFragment(), "Login");
+        ft.commit();
+    }
+    private void switchToMainFragment(String path, String user, String uid) {
+        Log.d(Constants.TAG, "starting main fragment");
+        getSupportActionBar().show();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        mainFragment = MainFragment.newInstance();
+
+        Bundle args = new Bundle();
+        args.putString(Constants.FIREBASE_PATH, path);
+        args.putString(Constants.FIREBASE_USER, uid);
+        args.putString(Constants.FIREBASE_NAME, user);
+        mainFragment.setArguments(args);
+
+        ft.replace(R.id.content_main, mainFragment, "Main");
+        ft.commit();
+
+    }
+
+    public void logOut() {
+        mAuth.getInstance().signOut();
+        loggedIn = false;
+        mainFragment.mMenu.findItem(R.id.login).setTitle(R.string.action_sign_in);
     }
 }
