@@ -290,6 +290,16 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         ft.replace(R.id.content_main, new LoginFragment(), "Login");
         ft.commit();
     }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        fm.popBackStackImmediate();
+        ft.commit();
+        getSupportActionBar().show();
+    }
+
     private void switchToMainFragment(String path, String user, String uid) {
         Log.d(Constants.TAG, "starting main fragment");
         getSupportActionBar().show();
