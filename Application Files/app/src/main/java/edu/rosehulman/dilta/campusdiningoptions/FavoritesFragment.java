@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseUser;
 
 
 /**
@@ -30,6 +33,8 @@ public class FavoritesFragment extends Fragment {
     private FavoritesAdapter mAdapter;
     private TextView help_message;
     private boolean show_help = true;
+    private String uid;
+    private boolean logged_in;
 
     public FavoritesFragment() {
         // Required empty public constructor
@@ -64,7 +69,17 @@ public class FavoritesFragment extends Fragment {
         }
         this.mAdapter.setFragment(this);
 
-        getActivity().setTitle(getResources().getString(R.string.favorites_title));
+        MainActivity activity = (MainActivity) getActivity();
+        FirebaseUser logged_in_user = activity.getUser();
+        this.logged_in = false;
+        if (logged_in_user != null) {
+            this.logged_in = true;
+            this.uid = activity.getUser().getUid();
+            Log.d("FavoritesFrag", "logged in: " + uid);
+            this.mAdapter.setLoggedIn(true);
+        }
+
+        activity.setTitle(getResources().getString(R.string.favorites_title));
     }
 
     @Override
@@ -105,14 +120,14 @@ public class FavoritesFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    public void editFavorite(final Food food) {
+    public void editFavorite(final Favorite fav) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
         View view = getActivity().getLayoutInflater().inflate(R.layout.edit_favorite, null);
         dialog.setView(view);
 
         final EditText food_name = (EditText) view.findViewById(R.id.food_name_edittext);
-        if (food != null) {
-            food_name.setText(food.getName());
+        if (fav != null) {
+            food_name.setText(fav.getFood().getName());
         }
 
         dialog.setNegativeButton(android.R.string.cancel, null);
@@ -120,12 +135,15 @@ public class FavoritesFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 String name = food_name.getText().toString();
-                if (food != null) {
-                    mAdapter.updateFavorite(food, name);
+                if (fav != null) {
+                    mAdapter.updateFavorite(fav, name);
                 } else {
                     Food food = new Food();
                     food.setName(name);
-                    mAdapter.addFavorite(food);
+                    Favorite new_favorite = new Favorite();
+                    new_favorite.setFood(food);
+                    new_favorite.setUid(uid);
+                    mAdapter.addFavorite(new_favorite);
                 }
 
                 help_message.setVisibility(View.GONE);
