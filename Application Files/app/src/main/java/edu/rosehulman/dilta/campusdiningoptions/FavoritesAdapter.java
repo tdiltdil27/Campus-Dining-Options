@@ -194,4 +194,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
             Log.e("FavoritesAdapter", "Database error: " + databaseError);
         }
     }
+
+    public List<Favorite> getFavorites() {
+        return mFavorites;
+    }
 }

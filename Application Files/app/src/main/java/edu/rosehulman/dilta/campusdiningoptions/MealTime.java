@@ -21,12 +21,8 @@ public class MealTime {
 
     }
 
-    public String getFoods() {
-        String foodString = "";
-        for(int i = 0 ; i < items.size(); i++) {
-            foodString = foodString + items.get(i).getName() + "\n";
-        }
-        return foodString;
+    public List<Food> getFoods() {
+        return items;
     }
 
     public void setHours(String hours) {

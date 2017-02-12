@@ -27,12 +27,13 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
     private static final String ARG_UNION = "Union Cafe";
     private List<MealTime> mMealTimes;
+    private List<Favorite> mFavorites;
 
     public MealTimeAdapter() {
 //        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
         Log.d("MealsAdapter", "Created meals adapter");
         mMealTimes = new ArrayList<MealTime>();
-
+        mFavorites = null;
     }
 
     protected MealTimeAdapter(Parcel in) {
@@ -50,8 +51,9 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         }
     };
 
-    public void setData(List mealTimes) {
+    public void setData(List mealTimes, List<Favorite> favorites) {
         mMealTimes = mealTimes;
+        mFavorites = favorites;
     }
 
     @Override
@@ -67,7 +69,39 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
         holder.mNameView.setText(name.getName());
         holder.mTimeView.setText(name.getHours());
-        holder.mFoodView.setText(name.getFoods());
+
+        List<Food> foods = name.getFoods();
+        List<String> foodNames = getFoodNames(foods);
+        List<Food> favorite_foods = new ArrayList<Food>();
+        for (Favorite fav : mFavorites) {
+            favorite_foods.add(fav.getFood());
+        }
+        List<String> favoriteNames = getFoodNames(favorite_foods);
+
+        String foodString = "";
+
+        if(mFavorites.size()!=0) {
+            for (int i = 0; i < foods.size(); i++) {
+                if(favoriteNames.contains(foodNames.get(i))) {
+                    foodString = foodString + foodNames.get(i) + " * " + "\n";
+                } else {
+                    foodString = foodString + foodNames.get(i) + "\n";
+                }
+            }
+        } else {
+            for (int i = 0; i < foods.size(); i++) {
+                foodString = foodString + foodNames.get(i) + "\n";
+            }
+        }
+        holder.mFoodView.setText(foodString);
+    }
+
+    private List<String> getFoodNames(List<Food> foods) {
+        List<String> foodNames = new ArrayList<>();
+        for(int j = 0; j < foods.size(); j++) {
+            foodNames.add(foods.get(j).getName());
+        }
+        return foodNames;
     }
 
     @Override
