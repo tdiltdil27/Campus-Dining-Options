@@ -82,7 +82,6 @@ public class MainFragment extends Fragment {
         //getData();
 
         activity = (MainActivity) getActivity();
-        loggedIn = activity.loggedIn();
         Log.d("MainFragment", "onCreate");
     }
 
@@ -92,6 +91,7 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         super.onCreateView(inflater, container, savedInstanceState);
 
+        loggedIn = activity.loggedIn();
         Log.d("MainFragment", "onCreateView");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
