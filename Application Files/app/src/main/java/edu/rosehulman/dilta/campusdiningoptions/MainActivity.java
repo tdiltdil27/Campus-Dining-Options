@@ -325,6 +325,11 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
     public void logOut() {
         mAuth.getInstance().signOut();
         loggedIn = false;
+        user = null;
         mainFragment.mMenu.findItem(R.id.login).setTitle(R.string.action_sign_in);
+    }
+
+    public FirebaseUser getUser() {
+        return this.user;
     }
 }

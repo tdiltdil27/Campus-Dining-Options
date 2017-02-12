@@ -27,7 +27,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
     private static final String ARG_UNION = "Union Cafe";
     private List<MealTime> mMealTimes;
-    private List<Food> mFavorites;
+    private List<Favorite> mFavorites;
 
     public MealTimeAdapter() {
 //        mealTimes = (ArrayList) SampleUtil.loadMealTimesFromJsonArray(mContext);
@@ -51,7 +51,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         }
     };
 
-    public void setData(List mealTimes, List<Food> favorites) {
+    public void setData(List mealTimes, List<Favorite> favorites) {
         mMealTimes = mealTimes;
         mFavorites = favorites;
     }
@@ -72,7 +72,11 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
         List<Food> foods = name.getFoods();
         List<String> foodNames = getFoodNames(foods);
-        List<String> favoriteNames = getFoodNames(mFavorites);
+        List<Food> favorite_foods = new ArrayList<Food>();
+        for (Favorite fav : mFavorites) {
+            favorite_foods.add(fav.getFood());
+        }
+        List<String> favoriteNames = getFoodNames(favorite_foods);
 
         String foodString = "";
 
