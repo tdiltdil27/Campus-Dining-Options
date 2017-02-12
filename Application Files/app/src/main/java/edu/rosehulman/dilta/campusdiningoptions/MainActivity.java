@@ -214,15 +214,6 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
     }
 
     @Override
-    public void onBackPressed() {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        fm.popBackStackImmediate();
-        ft.commit();
-        Snackbar.make(mainFragment.getView(), "Log In cancelled", Snackbar.LENGTH_LONG).show();
-        getSupportActionBar().show();
-    }
-    @Override
     protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthStateListener);

@@ -46,32 +46,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="320" column="25" selection-start-line="320" selection-start-column="25" selection-end-line="320" selection-end-column="25" />
+            <state relative-caret-position="1091">
+              <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4373#4401#0" expanded="true" />
                 <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#7773#8302#0" expanded="true" />
-                <element signature="e#8301#8302#0" expanded="true" />
-                <element signature="e#11072#11095#0" expanded="true" />
-                <marker date="1486862006757" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-                <marker date="1486862006757" expanded="false" signature="5440:5455" ph="}" />
-                <marker date="1486862006757" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-                <marker date="1486862006757" expanded="false" signature="5977:5992" ph="}" />
-                <marker date="1486862006757" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-                <marker date="1486862006757" expanded="false" signature="6206:6221" ph="}" />
-                <marker date="1486862006757" expanded="false" signature="6737:6748" ph=" { " />
-                <marker date="1486862006757" expanded="false" signature="6760:6766" ph=" }" />
-                <marker date="1486862006757" expanded="false" signature="6792:6803" ph=" { " />
-                <marker date="1486862006757" expanded="false" signature="6817:6823" ph=" }" />
-                <marker date="1486862006757" expanded="false" signature="7098:7109" ph=" { " />
-                <marker date="1486862006757" expanded="false" signature="7139:7145" ph=" }" />
+                <element signature="e#7414#7943#0" expanded="true" />
+                <element signature="e#7942#7943#0" expanded="true" />
+                <element signature="e#10713#10736#0" expanded="true" />
+                <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
+                <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
+                <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
+                <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
+                <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
+                <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
+                <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
+                <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
+                <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
+                <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
+                <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
+                <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -92,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/LoginFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+            <state relative-caret-position="71">
+              <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
               <folding>
                 <element signature="e#2641#2785#0" expanded="true" />
                 <element signature="e#2784#2785#0" expanded="true" />
@@ -2039,8 +2039,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2638,21 +2638,21 @@
             <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
             <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#7773#8302#0" expanded="true" />
-            <element signature="e#8301#8302#0" expanded="true" />
-            <element signature="e#11072#11095#0" expanded="true" />
-            <marker date="1486862006757" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-            <marker date="1486862006757" expanded="false" signature="5440:5455" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486862006757" expanded="false" signature="5977:5992" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486862006757" expanded="false" signature="6206:6221" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="6737:6748" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="6760:6766" ph=" }" />
-            <marker date="1486862006757" expanded="false" signature="6792:6803" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1486862006757" expanded="false" signature="7098:7109" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="7139:7145" ph=" }" />
+            <element signature="e#7414#7943#0" expanded="true" />
+            <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#10713#10736#0" expanded="true" />
+            <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
+            <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
+            <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
+            <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
+            <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
+            <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2688,21 +2688,21 @@
             <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
             <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#7773#8302#0" expanded="true" />
-            <element signature="e#8301#8302#0" expanded="true" />
-            <element signature="e#11072#11095#0" expanded="true" />
-            <marker date="1486862006757" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-            <marker date="1486862006757" expanded="false" signature="5440:5455" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486862006757" expanded="false" signature="5977:5992" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486862006757" expanded="false" signature="6206:6221" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="6737:6748" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="6760:6766" ph=" }" />
-            <marker date="1486862006757" expanded="false" signature="6792:6803" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1486862006757" expanded="false" signature="7098:7109" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="7139:7145" ph=" }" />
+            <element signature="e#7414#7943#0" expanded="true" />
+            <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#10713#10736#0" expanded="true" />
+            <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
+            <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
+            <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
+            <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
+            <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
+            <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2880,35 +2880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="320" column="25" selection-start-line="320" selection-start-column="25" selection-end-line="320" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4373#4401#0" expanded="true" />
-            <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#7773#8302#0" expanded="true" />
-            <element signature="e#8301#8302#0" expanded="true" />
-            <element signature="e#11072#11095#0" expanded="true" />
-            <marker date="1486862006757" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-            <marker date="1486862006757" expanded="false" signature="5440:5455" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486862006757" expanded="false" signature="5977:5992" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486862006757" expanded="false" signature="6206:6221" ph="}" />
-            <marker date="1486862006757" expanded="false" signature="6737:6748" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="6760:6766" ph=" }" />
-            <marker date="1486862006757" expanded="false" signature="6792:6803" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1486862006757" expanded="false" signature="7098:7109" ph=" { " />
-            <marker date="1486862006757" expanded="false" signature="7139:7145" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -2924,8 +2895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/LoginFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+        <state relative-caret-position="71">
+          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
           <folding>
             <element signature="e#2641#2785#0" expanded="true" />
             <element signature="e#2784#2785#0" expanded="true" />
@@ -2935,6 +2906,35 @@
             <element signature="e#4279#4313#0" expanded="true" />
             <element signature="e#4459#4492#0" expanded="true" />
             <element signature="e#5278#5323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1091">
+          <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4373#4401#0" expanded="true" />
+            <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#7414#7943#0" expanded="true" />
+            <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#10713#10736#0" expanded="true" />
+            <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
+            <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
+            <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
+            <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
+            <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
+            <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
+            <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
+            <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
           </folding>
         </state>
       </provider>
