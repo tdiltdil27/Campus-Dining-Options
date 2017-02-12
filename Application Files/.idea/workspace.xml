@@ -49,29 +49,31 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1091">
-              <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+            <state relative-caret-position="-2312">
+              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#4373#4401#0" expanded="true" />
-                <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#5166#5455#0" expanded="true" />
+                <element signature="e#5454#5455#0" expanded="true" />
+                <element signature="e#5586#5992#0" expanded="true" />
+                <element signature="e#5991#5992#0" expanded="true" />
+                <element signature="e#6052#6221#0" expanded="true" />
+                <element signature="e#6220#6221#0" expanded="true" />
+                <element signature="e#6684#6685#0" expanded="true" />
+                <element signature="e#6712#6713#0" expanded="true" />
+                <element signature="e#6738#6739#0" expanded="true" />
+                <element signature="e#6765#6766#0" expanded="true" />
+                <element signature="e#6793#6794#0" expanded="true" />
+                <element signature="e#6822#6823#0" expanded="true" />
+                <element signature="e#7099#7100#0" expanded="true" />
+                <element signature="e#7144#7145#0" expanded="true" />
+                <element signature="e#7177#7178#0" expanded="true" />
+                <element signature="e#7208#7209#0" expanded="true" />
                 <element signature="e#7414#7943#0" expanded="true" />
                 <element signature="e#7942#7943#0" expanded="true" />
+                <element signature="e#7977#8219#0" expanded="true" />
+                <element signature="e#8218#8219#0" expanded="true" />
                 <element signature="e#10713#10736#0" expanded="true" />
-                <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-                <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
-                <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-                <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
-                <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-                <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
-                <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
-                <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
-                <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
-                <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
-                <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
-                <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -80,11 +82,9 @@
       <file leaf-file-name="MainFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+            <state relative-caret-position="-1768">
+              <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
               <folding>
-                <element signature="e#4098#4113#0" expanded="true" />
-                <element signature="e#4114#4137#0" expanded="true" />
                 <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
                 <element signature="class#getLocationsTask#0;class#MainFragment#0" expanded="false" />
               </folding>
@@ -92,20 +92,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/LoginFragment.java">
+      <file leaf-file-name="FavoritesAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+            <state relative-caret-position="1837">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
-                <element signature="e#2641#2785#0" expanded="true" />
-                <element signature="e#2784#2785#0" expanded="true" />
-                <element signature="e#2835#2988#0" expanded="true" />
-                <element signature="e#2987#2988#0" expanded="true" />
-                <element signature="e#4086#4122#0" expanded="true" />
-                <element signature="e#4279#4313#0" expanded="true" />
-                <element signature="e#4459#4492#0" expanded="true" />
-                <element signature="e#5278#5323#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#674#675#0" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#823#824#0" expanded="true" />
+                <element signature="e#881#882#0" expanded="true" />
+                <element signature="e#1056#1057#0" expanded="true" />
+                <element signature="e#1111#1112#0" expanded="true" />
+                <element signature="e#1185#1186#0" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1800#1801#0" expanded="true" />
+                <element signature="e#1845#1846#0" expanded="true" />
+                <element signature="e#2270#2271#0" expanded="true" />
+                <element signature="e#2294#2295#0" expanded="true" />
+                <element signature="e#2807#3000#0" expanded="true" />
+                <element signature="e#2999#3000#0" expanded="true" />
+                <element signature="e#3048#3314#0" expanded="true" />
+                <element signature="e#3313#3314#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FavoritesFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="35">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <folding>
+                <element signature="e#4085#4630#0" expanded="true" />
+                <element signature="e#4629#4630#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2029,7 +2051,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesFragment.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/proguard-rules.pro" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -2039,15 +2060,18 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="984" />
-    <option name="width" value="943" />
-    <option name="height" value="1087" />
+    <option name="x" value="-1288" />
+    <option name="y" value="43" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2074,7 +2098,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2082,10 +2105,6 @@
               <option name="myItemId" value="Application Files" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2095,64 +2114,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application Files" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application Files" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application Files" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2187,21 +2148,12 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application Files" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2209,7 +2161,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="6272c4f1" />
+    <property name="device.picker.selection" value="ee6cf6b2" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPropertiesWindowManager-NlEditorPanel.WIDTH" value="98" />
   </component>
@@ -2573,41 +2525,41 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="984" y="0" width="943" height="1087" extended-state="0" />
-    <editor active="false" />
+    <frame x="-1288" y="43" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3444564" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3955224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3800475" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32622603" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20838052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15210356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3955224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2630,29 +2582,81 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4373#4401#0" expanded="true" />
+            <element signature="e#5166#5455#0" expanded="true" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5586#5992#0" expanded="true" />
+            <element signature="e#5991#5992#0" expanded="true" />
+            <element signature="e#6052#6221#0" expanded="true" />
+            <element signature="e#6220#6221#0" expanded="true" />
+            <element signature="e#6684#6685#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6738#6739#0" expanded="true" />
+            <element signature="e#6765#6766#0" expanded="true" />
+            <element signature="e#6793#6794#0" expanded="true" />
+            <element signature="e#6822#6823#0" expanded="true" />
+            <element signature="e#7099#7100#0" expanded="true" />
+            <element signature="e#7144#7145#0" expanded="true" />
+            <element signature="e#7177#7178#0" expanded="true" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7414#7943#0" expanded="true" />
+            <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#7977#8219#0" expanded="true" />
+            <element signature="e#8218#8219#0" expanded="true" />
+            <element signature="e#10713#10736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+          <folding>
+            <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
+            <element signature="class#getLocationsTask#0;class#MainFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/LoginFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2703">
+          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#4373#4401#0" expanded="true" />
-            <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#5166#5455#0" expanded="true" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5586#5992#0" expanded="true" />
+            <element signature="e#5991#5992#0" expanded="true" />
+            <element signature="e#6052#6221#0" expanded="true" />
+            <element signature="e#6220#6221#0" expanded="true" />
+            <element signature="e#6684#6685#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6738#6739#0" expanded="true" />
+            <element signature="e#6765#6766#0" expanded="true" />
+            <element signature="e#6793#6794#0" expanded="true" />
+            <element signature="e#6822#6823#0" expanded="true" />
+            <element signature="e#7099#7100#0" expanded="true" />
+            <element signature="e#7144#7145#0" expanded="true" />
+            <element signature="e#7177#7178#0" expanded="true" />
+            <element signature="e#7208#7209#0" expanded="true" />
             <element signature="e#7414#7943#0" expanded="true" />
             <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#7977#8219#0" expanded="true" />
+            <element signature="e#8218#8219#0" expanded="true" />
             <element signature="e#10713#10736#0" expanded="true" />
-            <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-            <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
-            <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2662,8 +2666,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4098#4113#0" expanded="true" />
-            <element signature="e#4114#4137#0" expanded="true" />
             <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
             <element signature="class#getLocationsTask#0;class#MainFragment#0" expanded="false" />
           </folding>
@@ -2683,26 +2685,28 @@
         <state relative-caret-position="68">
           <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#4373#4401#0" expanded="true" />
-            <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#5166#5455#0" expanded="true" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5586#5992#0" expanded="true" />
+            <element signature="e#5991#5992#0" expanded="true" />
+            <element signature="e#6052#6221#0" expanded="true" />
+            <element signature="e#6220#6221#0" expanded="true" />
+            <element signature="e#6684#6685#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6738#6739#0" expanded="true" />
+            <element signature="e#6765#6766#0" expanded="true" />
+            <element signature="e#6793#6794#0" expanded="true" />
+            <element signature="e#6822#6823#0" expanded="true" />
+            <element signature="e#7099#7100#0" expanded="true" />
+            <element signature="e#7144#7145#0" expanded="true" />
+            <element signature="e#7177#7178#0" expanded="true" />
+            <element signature="e#7208#7209#0" expanded="true" />
             <element signature="e#7414#7943#0" expanded="true" />
             <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#7977#8219#0" expanded="true" />
+            <element signature="e#8218#8219#0" expanded="true" />
             <element signature="e#10713#10736#0" expanded="true" />
-            <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-            <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
-            <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2712,8 +2716,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4098#4113#0" expanded="true" />
-            <element signature="e#4114#4137#0" expanded="true" />
             <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
             <element signature="class#getLocationsTask#0;class#MainFragment#0" expanded="false" />
           </folding>
@@ -2744,14 +2746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MealTimeAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -2764,7 +2758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2772,7 +2765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2780,7 +2772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2796,17 +2787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
-          <folding>
-            <element signature="e#2146#2196#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2843,7 +2823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2880,61 +2859,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/LoginFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding>
+            <element signature="e#4085#4630#0" expanded="true" />
+            <element signature="e#4629#4630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/FavoritesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1837">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1800#1801#0" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2294#2295#0" expanded="true" />
+            <element signature="e#2807#3000#0" expanded="true" />
+            <element signature="e#2999#3000#0" expanded="true" />
+            <element signature="e#3048#3314#0" expanded="true" />
+            <element signature="e#3313#3314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+        <state relative-caret-position="-1768">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
           <folding>
-            <element signature="e#4098#4113#0" expanded="true" />
-            <element signature="e#4114#4137#0" expanded="true" />
             <element signature="class#SectionsPagerAdapter#0;class#MainFragment#0" expanded="false" />
             <element signature="class#getLocationsTask#0;class#MainFragment#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/LoginFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
-          <folding>
-            <element signature="e#2641#2785#0" expanded="true" />
-            <element signature="e#2784#2785#0" expanded="true" />
-            <element signature="e#2835#2988#0" expanded="true" />
-            <element signature="e#2987#2988#0" expanded="true" />
-            <element signature="e#4086#4122#0" expanded="true" />
-            <element signature="e#4279#4313#0" expanded="true" />
-            <element signature="e#4459#4492#0" expanded="true" />
-            <element signature="e#5278#5323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/rosehulman/dilta/campusdiningoptions/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1091">
-          <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+        <state relative-caret-position="-2312">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#4373#4401#0" expanded="true" />
-            <element signature="method#createCalendarDialog#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#updateMainFragmentData#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#5166#5455#0" expanded="true" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5586#5992#0" expanded="true" />
+            <element signature="e#5991#5992#0" expanded="true" />
+            <element signature="e#6052#6221#0" expanded="true" />
+            <element signature="e#6220#6221#0" expanded="true" />
+            <element signature="e#6684#6685#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="e#6738#6739#0" expanded="true" />
+            <element signature="e#6765#6766#0" expanded="true" />
+            <element signature="e#6793#6794#0" expanded="true" />
+            <element signature="e#6822#6823#0" expanded="true" />
+            <element signature="e#7099#7100#0" expanded="true" />
+            <element signature="e#7144#7145#0" expanded="true" />
+            <element signature="e#7177#7178#0" expanded="true" />
+            <element signature="e#7208#7209#0" expanded="true" />
             <element signature="e#7414#7943#0" expanded="true" />
             <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#7977#8219#0" expanded="true" />
+            <element signature="e#8218#8219#0" expanded="true" />
             <element signature="e#10713#10736#0" expanded="true" />
-            <marker date="1486863114969" expanded="false" signature="5166:5326" ph="(view, year, monthOfYear, dayOfMonth) → {" />
-            <marker date="1486863114969" expanded="false" signature="5440:5455" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="5586:5700" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486863114969" expanded="false" signature="5977:5992" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="6052:6166" ph="(OnClickListener) (dialog, whichButton) → {" />
-            <marker date="1486863114969" expanded="false" signature="6206:6221" ph="}" />
-            <marker date="1486863114969" expanded="false" signature="6737:6748" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="6760:6766" ph=" }" />
-            <marker date="1486863114969" expanded="false" signature="6792:6803" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1486863114969" expanded="false" signature="7098:7109" ph=" { " />
-            <marker date="1486863114969" expanded="false" signature="7139:7145" ph=" }" />
           </folding>
         </state>
       </provider>

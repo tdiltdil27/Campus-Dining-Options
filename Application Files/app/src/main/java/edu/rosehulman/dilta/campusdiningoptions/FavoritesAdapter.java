@@ -2,6 +2,7 @@ package edu.rosehulman.dilta.campusdiningoptions;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,12 +19,17 @@ import java.util.List;
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> implements Parcelable {
 
     private List<Food> mFavorites;
+    private FavoritesFragment favoritesFrag;
 
     public FavoritesAdapter() {
         this.mFavorites = new ArrayList<Food>();
     }
 
     protected FavoritesAdapter(Parcel in) {
+    }
+
+    public void setFragment(Fragment f) {
+        this.favoritesFrag = (FavoritesFragment) f;
     }
 
     public static final Creator<FavoritesAdapter> CREATOR = new Creator<FavoritesAdapter>() {
@@ -66,6 +72,11 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
         notifyItemRemoved(position);
     }
 
+    public void updateFavorite(Food food, String name) {
+        food.setName(name);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -89,6 +100,14 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
                 @Override
                 public void onClick(View view) {
                     removeFavorite(getAdapterPosition());
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    favoritesFrag.editFavorite(mFavorites.get(getAdapterPosition()));
+                    return false;
                 }
             });
         }

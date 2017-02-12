@@ -62,6 +62,7 @@ public class FavoritesFragment extends Fragment {
         } else {
             this.mAdapter = new FavoritesAdapter();
         }
+        this.mAdapter.setFragment(this);
 
         getActivity().setTitle(getResources().getString(R.string.favorites_title));
     }
@@ -95,30 +96,37 @@ public class FavoritesFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        MainActivity activity = (MainActivity) getActivity();
 
         if (id == R.id.action_add_favorite) {
-            editFavorite();
+            editFavorite(null);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void editFavorite() {
+    public void editFavorite(final Food food) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
         View view = getActivity().getLayoutInflater().inflate(R.layout.edit_favorite, null);
         dialog.setView(view);
 
         final EditText food_name = (EditText) view.findViewById(R.id.food_name_edittext);
+        if (food != null) {
+            food_name.setText(food.getName());
+        }
 
         dialog.setNegativeButton(android.R.string.cancel, null);
         dialog.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Food food = new Food();
-                food.setName(food_name.getText().toString());
-                mAdapter.addFavorite(food);
+                String name = food_name.getText().toString();
+                if (food != null) {
+                    mAdapter.updateFavorite(food, name);
+                } else {
+                    Food food = new Food();
+                    food.setName(name);
+                    mAdapter.addFavorite(food);
+                }
 
                 help_message.setVisibility(View.GONE);
             }
