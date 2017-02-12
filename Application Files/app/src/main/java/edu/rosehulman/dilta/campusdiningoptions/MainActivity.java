@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         FragmentTransaction ft = fm.beginTransaction();
         fm.popBackStackImmediate();
         ft.commit();
-        getSupportActionBar().show();
+        getSupportActionBar();
     }
 
     private void switchToMainFragment(String path, String user, String uid) {

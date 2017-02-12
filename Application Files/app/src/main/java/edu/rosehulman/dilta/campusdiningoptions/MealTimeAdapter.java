@@ -67,7 +67,15 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
 
         holder.mNameView.setText(name.getName());
         holder.mTimeView.setText(name.getHours());
-        holder.mFoodView.setText(name.getFoods());
+
+        List<Food> foods = name.getFoods();
+        String foodString = "";
+
+
+        for(int i = 0 ; i < foods.size(); i++) {
+            foodString = foodString + foods.get(i).getName() + "\n";
+        }
+        holder.mFoodView.setText(foodString);
     }
 
     @Override

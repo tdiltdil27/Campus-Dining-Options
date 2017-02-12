@@ -112,4 +112,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
             });
         }
     }
+
+    public List<Food> getFavorites() {
+        return mFavorites;
+    }
 }
