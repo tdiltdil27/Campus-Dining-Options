@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         ft.replace(R.id.content_main, mainFragment);
         ft.commit();
 
+        mainFragment.setFavoritesAdapter(mFavoritesAdapter);
+
         mAuth = FirebaseAuth.getInstance();
 
         initializeListeners();

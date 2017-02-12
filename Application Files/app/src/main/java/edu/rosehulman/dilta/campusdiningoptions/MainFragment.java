@@ -45,6 +45,7 @@ public class MainFragment extends Fragment {
     private MealsFragment mealsFragment;
     private ViewPager mViewPager;
     private MainActivity activity;
+    private FavoritesAdapter favoritesAdapter;
 
     private boolean loggedIn;
     private List<Location> mLocations;
@@ -170,6 +171,10 @@ public class MainFragment extends Fragment {
         );
     }
 
+    public void setFavoritesAdapter(FavoritesAdapter favoritesAdapter) {
+        this.favoritesAdapter = favoritesAdapter;
+    }
+
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -253,7 +258,7 @@ public class MainFragment extends Fragment {
             mLocations = locations;
             mMealTimes = mealTimes;
 
-            mealsFragment.getAdapter().setData(mealTimes);
+            mealsFragment.getAdapter().setData(mealTimes,favoritesAdapter.getFavorites());
             mealsFragment.getAdapter().notifyDataSetChanged();
         }
     }
