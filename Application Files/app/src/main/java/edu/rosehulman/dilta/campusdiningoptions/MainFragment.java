@@ -122,7 +122,7 @@ public class MainFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         mMenu = menu;
         inflater.inflate(R.menu.menu_main, menu);
-        mMenu.findItem(R.id.login).setTitle(getString(loggedIn?R.string.logout:R.string.action_sign_in));
+        mMenu.findItem(R.id.login).setTitle(getString(activity.loggedIn()?R.string.logout:R.string.action_sign_in));
     }
 
     @Override
