@@ -285,6 +285,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
     public void onLogin(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, mOnCompleteListener);
+        loggedIn = true;
     }
     private void switchToLoginFragment() {
         getSupportActionBar().hide();
@@ -316,7 +317,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
 //
 //        ft.replace(R.id.content_main, mainFragment, "Main");
 //        ft.commit();
-        loggedIn = true;
+
         onBackPressed();
         mainFragment.setUserInfo(path, user, uid);
 
