@@ -1,6 +1,8 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
 
     private static final String CALENDAR_DIALOG_TITLE = "Choose a date";
     private static final String GUEST_TEXT = "a guest";
+    private static final long NOTIFICATION_TIME = 43200000L;
 
     private String currentDate;
     private String focusedDate;
@@ -206,6 +209,13 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         }
     }
 
+    public void setupNotifications() {
+        Intent intent = new Intent(MainActivity.this, Reciever.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 1, intent, 0);
+        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        am.setRepeating(am.RTC, NOTIFICATION_TIME, am.INTERVAL_DAY, pendingIntent);
+    }
+
     public FavoritesAdapter getFavoritesAdapter() {
         return this.mFavoritesAdapter;
     }
@@ -228,15 +238,15 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
                 Log.d(Constants.TAG, "User: " + user);
                 if (user!=null) {
                     loggedIn = true;
-                    mFavoritesAdapter = new FavoritesAdapter(user.getUid());
-                    mainFragment.setFavoritesAdapter(mFavoritesAdapter);
+                    updateFavoritesAdapter(user.getUid());
+//                    mFavoritesAdapter = new FavoritesAdapter(user.getUid());
+//                    mainFragment.setFavoritesAdapter(mFavoritesAdapter);
                     switchToMainFragment("favorites/", user.getDisplayName(), user.getUid());
                 } else {
 //                    switchToLoginFragment();
                 }
             }
         };
-
 
         mOnCompleteListener = new OnCompleteListener() {
             @Override
@@ -246,6 +256,12 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
                 }
             }
         };
+    }
+
+    public void updateFavoritesAdapter(String uid) {
+        mFavoritesAdapter = new FavoritesAdapter(uid);
+        mainFragment.setFavoritesAdapter(mFavoritesAdapter);
+        setupNotifications();
     }
 
     @Override
@@ -329,8 +345,9 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         loggedIn = false;
         user = null;
         mainFragment.mMenu.findItem(R.id.login).setTitle(R.string.action_sign_in);
-        mFavoritesAdapter = new FavoritesAdapter("");
-        mainFragment.setFavoritesAdapter(mFavoritesAdapter);
+        updateFavoritesAdapter("");
+//        mFavoritesAdapter = new FavoritesAdapter("");
+//        mainFragment.setFavoritesAdapter(mFavoritesAdapter);
     }
 
     public FirebaseUser getUser() {
