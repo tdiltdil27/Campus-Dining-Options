@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mFavoritesAdapter = new FavoritesAdapter();
-
         setDate();
         updateTitle();
 
@@ -106,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         ft.replace(R.id.content_main, mainFragment);
         ft.commit();
 
+        mFavoritesAdapter = new FavoritesAdapter("");
         mainFragment.setFavoritesAdapter(mFavoritesAdapter);
 
         mAuth = FirebaseAuth.getInstance();
@@ -229,6 +228,8 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
                 Log.d(Constants.TAG, "User: " + user);
                 if (user!=null) {
                     loggedIn = true;
+                    mFavoritesAdapter = new FavoritesAdapter(user.getUid());
+                    mainFragment.setFavoritesAdapter(mFavoritesAdapter);
                     switchToMainFragment("favorites/", user.getDisplayName(), user.getUid());
                 } else {
 //                    switchToLoginFragment();

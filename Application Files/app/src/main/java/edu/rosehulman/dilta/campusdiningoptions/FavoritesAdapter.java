@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +30,23 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     private FavoritesFragment favoritesFrag;
     private DatabaseReference mRef;
     private boolean loggedIn;
+//    private FavoritesChildEventListener listener;
+    private String uid;
 
-    public FavoritesAdapter() {
+    public FavoritesAdapter(String uid) {
+        if (uid.equals("")){
+            this.uid = null;
+        } else {
+            this.uid = uid;
+            this.mRef = FirebaseDatabase.getInstance().getReference().child("favorites");
+            Query q = this.mRef.orderByChild("uid").equalTo(this.uid);
+            q.addChildEventListener(new FavoritesChildEventListener());
+        }
+
         this.mFavorites = new ArrayList<Favorite>();
-        this.mRef = FirebaseDatabase.getInstance().getReference().child("favorites");
-        this.mRef.addChildEventListener(new FavoritesChildEventListener());
+
         this.loggedIn = false;
+//        this.listener = null;
     }
 
     protected FavoritesAdapter(Parcel in) {
@@ -43,6 +55,21 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     public void setFragment(Fragment f) {
         this.favoritesFrag = (FavoritesFragment) f;
     }
+
+//    public void setQuery(String uid) {
+//        if (this.listener != null) {
+//            mRef.removeEventListener(this.listener);
+//        }
+//
+//        Query q = null;
+//        if (uid != null) {
+//            Log.d("FragmentAdapter", "uid is: " + uid);
+//            q = mRef.orderByChild("uid").equalTo(uid);
+//            this.listener = new FavoritesChildEventListener();
+//            q.addChildEventListener(this.listener);
+//            notifyDataSetChanged();
+//        }
+//    }
 
     public static final Creator<FavoritesAdapter> CREATOR = new Creator<FavoritesAdapter>() {
         @Override

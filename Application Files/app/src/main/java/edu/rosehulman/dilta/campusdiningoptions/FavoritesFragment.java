@@ -64,8 +64,9 @@ public class FavoritesFragment extends Fragment {
             if (this.mAdapter.getItemCount() > 0) {
                 this.show_help = false;
             }
+            //this.mAdapter.reset();
         } else {
-            this.mAdapter = new FavoritesAdapter();
+            this.mAdapter = new FavoritesAdapter("");
         }
         this.mAdapter.setFragment(this);
 
@@ -78,6 +79,8 @@ public class FavoritesFragment extends Fragment {
             Log.d("FavoritesFrag", "logged in: " + uid);
             this.mAdapter.setLoggedIn(true);
         }
+
+        //this.mAdapter.setQuery(uid);
 
         activity.setTitle(getResources().getString(R.string.favorites_title));
     }
