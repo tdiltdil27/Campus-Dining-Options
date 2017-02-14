@@ -71,37 +71,28 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         holder.mTimeView.setText(name.getHours());
 
         List<Food> foods = name.getFoods();
-        List<String> foodNames = getFoodNames(foods);
         List<Food> favorite_foods = new ArrayList<Food>();
         for (Favorite fav : mFavorites) {
             favorite_foods.add(fav.getFood());
         }
-        List<String> favoriteNames = getFoodNames(favorite_foods);
 
         String foodString = "";
 
-        if(mFavorites.size()!=0) {
-            for (int i = 0; i < foods.size(); i++) {
-                if(favoriteNames.contains(foodNames.get(i))) {
-                    foodString = foodString + foodNames.get(i) + " * " + "\n";
-                } else {
-                    foodString = foodString + foodNames.get(i) + "\n";
+        for (Food food : foods) {
+            boolean favorited = false;
+            for (Food favorite_food : favorite_foods) {
+                if (food.getName().contains(favorite_food.getName())) {
+                    foodString = foodString + food.getName() + " * " + "\n";
+                    favorited = true;
                 }
             }
-        } else {
-            for (int i = 0; i < foods.size(); i++) {
-                foodString = foodString + foodNames.get(i) + "\n";
+
+            if (!favorited) {
+                foodString = foodString + food.getName() + "\n";
             }
         }
-        holder.mFoodView.setText(foodString);
-    }
 
-    private List<String> getFoodNames(List<Food> foods) {
-        List<String> foodNames = new ArrayList<>();
-        for(int j = 0; j < foods.size(); j++) {
-            foodNames.add(foods.get(j).getName());
-        }
-        return foodNames;
+        holder.mFoodView.setText(foodString);
     }
 
     @Override

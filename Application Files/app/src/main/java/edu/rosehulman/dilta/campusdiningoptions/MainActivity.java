@@ -329,6 +329,8 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         loggedIn = false;
         user = null;
         mainFragment.mMenu.findItem(R.id.login).setTitle(R.string.action_sign_in);
+        mFavoritesAdapter = new FavoritesAdapter("");
+        mainFragment.setFavoritesAdapter(mFavoritesAdapter);
     }
 
     public FirebaseUser getUser() {
