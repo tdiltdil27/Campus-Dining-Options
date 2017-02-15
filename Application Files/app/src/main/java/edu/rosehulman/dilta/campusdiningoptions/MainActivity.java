@@ -30,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 
@@ -82,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
     public int mMonth;
     public int mDay;
 
-    private DatabaseReference mFirebase;
     private ValueEventListener mListener;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private OnCompleteListener mOnCompleteListener;
@@ -116,24 +116,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
 
         initializeListeners();
 
-//        mFirebase = FirebaseDatabase.getInstance().getReference().child("title");
-//
-//        mListener = mFirebase.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                setTitle((String)dataSnapshot.getValue());
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Log.d(Constants.TAG,"Database error");
-////                mAuth.getInstance().signOut();
-////                switchToLoginFragment();
-//            }
-//        });
-//        if(mFirebase == null) {
-//            setTitle(getString(R.string.app_name));
-//        }
+        setTitle(getString(R.string.app_name));
     }
 
     public void setDate() {
@@ -156,12 +139,17 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         datePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                mYear = year;
-                mMonth = monthOfYear+1;
-                mDay = dayOfMonth;
+//                mYear = year;
+//                mMonth = monthOfYear+1;
+//                mDay = dayOfMonth;
             }
         }, mYear, mMonth-1, mDay );
-//        builder.setTitle(CALENDAR_DIALOG_TITLE);
+
+        // Restricts date selection to one week after the current day
+        final Calendar calendar = Calendar.getInstance();
+        datePicker.getDatePicker().setMinDate(calendar.getTimeInMillis());
+        calendar.add(Calendar.DATE, 7);
+        datePicker.getDatePicker().setMaxDate(calendar.getTimeInMillis());
 
         datePicker.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
@@ -178,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
                 // Do nothing.
             }
         });
+        datePicker.setTitle("");
         datePicker.show();
     }
 
@@ -215,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         Intent intent = new Intent(MainActivity.this, Receiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-        am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), 10000L, pendingIntent);
+        am.setRepeating(AlarmManager.RTC, this.NOTIFICATION_TIME, AlarmManager.INTERVAL_DAY, pendingIntent);
         Log.d("MainActivity", "set notification alarm");
     }
 

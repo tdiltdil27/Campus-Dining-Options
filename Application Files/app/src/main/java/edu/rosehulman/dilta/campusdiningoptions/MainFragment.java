@@ -136,8 +136,6 @@ public class MainFragment extends Fragment {
 
             activity.createCalendarDialog();
             return true;
-        } else if (id == R.id.action_refresh) {
-            activity.updateMainFragmentData();
         } else if (id == R.id.action_favorites) {
             FavoritesFragment favorites = FavoritesFragment.newInstance(activity.getFavoritesAdapter());
             FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
