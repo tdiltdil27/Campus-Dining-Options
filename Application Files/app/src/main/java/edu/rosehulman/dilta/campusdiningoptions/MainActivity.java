@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 
@@ -138,9 +139,9 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         datePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                mYear = year;
-                mMonth = monthOfYear+1;
-                mDay = dayOfMonth;
+//                mYear = year;
+//                mMonth = monthOfYear+1;
+//                mDay = dayOfMonth;
             }
         }, mYear, mMonth-1, mDay );
 
@@ -165,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
                 // Do nothing.
             }
         });
+        datePicker.setTitle("");
         datePicker.show();
     }
 
