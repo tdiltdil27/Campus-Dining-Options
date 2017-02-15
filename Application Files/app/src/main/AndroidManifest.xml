@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name="edu.rosehulman.dilta.campusdiningoptions.Receiver"></receiver>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <reciever android:name="edu.rosehulman.dilta.campusdiningoptions.Reciever"></reciever>
 
 </manifest>

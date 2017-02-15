@@ -2,6 +2,7 @@ package edu.rosehulman.dilta.campusdiningoptions;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,6 +17,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -107,33 +110,31 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         ft.replace(R.id.content_main, mainFragment);
         ft.commit();
 
-        mFavoritesAdapter = new FavoritesAdapter("");
-        mainFragment.setFavoritesAdapter(mFavoritesAdapter);
+        updateFavoritesAdapter("");
 
         mAuth = FirebaseAuth.getInstance();
 
         initializeListeners();
 
-        mFirebase = FirebaseDatabase.getInstance().getReference().child("title");
-
-        mListener = mFirebase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                setTitle((String)dataSnapshot.getValue());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d(Constants.TAG,"Database error");
-//                mAuth.getInstance().signOut();
-//                switchToLoginFragment();
-            }
-        });
-        if(mFirebase == null) {
-            setTitle(getString(R.string.app_name));
-        }
+//        mFirebase = FirebaseDatabase.getInstance().getReference().child("title");
+//
+//        mListener = mFirebase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                setTitle((String)dataSnapshot.getValue());
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                Log.d(Constants.TAG,"Database error");
+////                mAuth.getInstance().signOut();
+////                switchToLoginFragment();
+//            }
+//        });
+//        if(mFirebase == null) {
+//            setTitle(getString(R.string.app_name));
+//        }
     }
-
 
     public void setDate() {
         Calendar calendar = GregorianCalendar.getInstance();
@@ -189,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         if(focusedDate.equals(currentDate)) {
             focusedDate = "Today, " + focusedDate;
         }
+        Log.d("MainActivity", "title: " + focusedDate);
         setTitle(focusedDate);
     }
 
@@ -210,10 +212,11 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
     }
 
     public void setupNotifications() {
-        Intent intent = new Intent(MainActivity.this, Reciever.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 1, intent, 0);
+        Intent intent = new Intent(MainActivity.this, Receiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-        am.setRepeating(am.RTC, NOTIFICATION_TIME, am.INTERVAL_DAY, pendingIntent);
+        am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), 10000L, pendingIntent);
+        Log.d("MainActivity", "set notification alarm");
     }
 
     public FavoritesAdapter getFavoritesAdapter() {

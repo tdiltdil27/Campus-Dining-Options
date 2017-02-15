@@ -7,22 +7,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.util.Log;
 
 /**
  * Created by brandsm on 2/14/2017.
  */
 
-public class Reciever extends BroadcastReceiver {
+public class Receiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("Reciever", "called");
         showNotification(context);
     }
 
     private void showNotification(Context context) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setSmallIcon(R.mipmap.ic_stat_restaurant_menu)
-                .setContentTitle("Some of your favorites are available today!")
-                .setContentText("Take a look at today's menu to see where you may want to eat!");
+                .setContentTitle("Tap to check out today's menu!")
+                .setContentText("Check to see if your favorites are served today.")
+                .setAutoCancel(true);
 
         Intent resultIntent = new Intent(context, MainActivity.class);
 
