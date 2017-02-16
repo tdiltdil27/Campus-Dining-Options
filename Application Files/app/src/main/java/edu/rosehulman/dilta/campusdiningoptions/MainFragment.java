@@ -1,6 +1,9 @@
 package edu.rosehulman.dilta.campusdiningoptions;
 
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -74,12 +77,10 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
             username = getArguments().getString(Constants.FIREBASE_NAME);
         } else {
             username = null;
         }
-        //getData();
 
         activity = (MainActivity) getActivity();
         Log.d("MainFragment", "onCreate");
@@ -95,7 +96,6 @@ public class MainFragment extends Fragment {
         Log.d("MainFragment", "onCreateView");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
 
         mViewPager = (ViewPager) view.findViewById(R.id.container);
@@ -108,6 +108,13 @@ public class MainFragment extends Fragment {
         setHasOptionsMenu(true);
         activity.updateTitle();
         return view;
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     @Override
@@ -189,6 +196,7 @@ public class MainFragment extends Fragment {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+
             if(position==0) {
                 Log.d("MainFrag", "new instance of mealsfragment");
                 mealsFragment = MealsFragment.newInstance();
@@ -200,6 +208,7 @@ public class MainFragment extends Fragment {
             } else {
                 return null;
             }
+
         }
 
         @Override
@@ -228,6 +237,9 @@ public class MainFragment extends Fragment {
 
         @Override
         protected List<Location> doInBackground(String... urlStrings) {
+            if(!isNetworkAvailable()) {
+                Snackbar.make(getView(), "Data not currently available over network. Restart App when reconnected.", Snackbar.LENGTH_INDEFINITE).show();
+            }
             Log.d("MainFrag", "in doInBackground");
             List<Location> locations = new ArrayList<Location>();
             String urlString = urlStrings[0];
