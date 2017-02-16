@@ -14,6 +14,8 @@ It can currently:
   across Rose-Hulmans campus
 - each menu item includes its title, amount of calories and information
   on whether it is vegetarian, vegan or gluten free.
+- stores Favorite information and notates Favorites on the main cafe menu
+- allows users to login with Rose-Hulman account information to store Favorites
 
 This data is then formatted into JSON to be read in by our android app.
 
