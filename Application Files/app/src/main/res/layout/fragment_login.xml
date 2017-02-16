@@ -41,51 +41,6 @@
         android:layout_marginTop="40dp"
         android:orientation="vertical">
 
-        <AutoCompleteTextView
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/prompt_email"
-            android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:shadowColor="@color/white"
-            android:singleLine="true"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textColorLink="@color/white" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/prompt_password"
-            android:imeActionLabel="@string/action_sign_in"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:shadowColor="@color/white"
-            android:singleLine="true"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textColorLink="@color/white" />
-
-        <Button
-            android:id="@+id/email_sign_in_button"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/gray"
-            android:text="@string/action_sign_in"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-
-
         <Button
             android:id="@+id/rosefire_sign_in_button"
             style="?android:textAppearanceSmall"

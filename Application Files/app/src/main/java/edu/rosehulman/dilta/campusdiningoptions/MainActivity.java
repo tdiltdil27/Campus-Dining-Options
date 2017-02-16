@@ -89,8 +89,9 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
     private FirebaseAuth mAuth;
 
     private boolean loggedIn;
-    private int RC_ROSEFIRE_LOGIN = 2;
+    private static final int RC_ROSEFIRE_LOGIN = 1;
     private MainFragment mainFragment;
+    private LoginFragment loginFragment;
     private FirebaseUser user;
 
     @Override
@@ -290,16 +291,11 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         }
     }
 
-    @Override
-    public void onLogin(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, mOnCompleteListener);
-        loggedIn = true;
-    }
     private void switchToLoginFragment() {
         getSupportActionBar().hide();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.content_main, new LoginFragment(), "Login");
+        loginFragment = new LoginFragment();
+        ft.replace(R.id.content_main, loginFragment, "login");
         ft.commit();
     }
 
@@ -344,5 +340,9 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
 
     public FirebaseUser getUser() {
         return this.user;
+    }
+
+    public void addLoginFragment(LoginFragment login) {
+        loginFragment = login;
     }
 }

@@ -147,7 +147,8 @@ public class MainFragment extends Fragment {
                 activity.getSupportActionBar().hide();
                 LoginFragment login = new LoginFragment();
                 FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.content_main, login);
+                ft.replace(R.id.content_main, login, "login");
+                activity.addLoginFragment(login);
                 ft.addToBackStack("login");
                 ft.commit();
             } else {
@@ -249,13 +250,34 @@ public class MainFragment extends Fragment {
             hoursFragment.getAdapter().setData(locations);
             hoursFragment.getAdapter().notifyDataSetChanged();
 
+            // Grabs the mealtimes from the Union for the cafe menu fragment
             List<MealTime> mealTimes = new ArrayList<>();
 
             for(int i = 0; i < locations.size(); i++) {
                 if(locations.get(i).getName().equals(ARG_UNION)) {
                     mealTimes = locations.get(i).getMealTimes();
                 }
+
+                // Removes blank character spaces if pulling data for a day that doesn't have all the data available yet
+                for(int j = 0; j < locations.get(i).getMealTimes().size(); j++) {
+                    List<MealTime> locationMealTime = locations.get(i).getMealTimes();
+                    if(locationMealTime.get(j).getName().contains("xa0")) {
+                        locationMealTime.get(j).setName(Constants.DATA_NOT_AVAILABLE);
+                        locationMealTime.get(j).setHours("");
+                    }
+                    if(locationMealTime.get(j).getHours().contains("xa0")) {
+                        locationMealTime.get(j).setHours(Constants.DATA_NOT_AVAILABLE);
+                    }
+                    for(int k = 0; k < locationMealTime.get(j).getFoods().size(); k++) {
+                        if(locationMealTime.get(j).getFoods().get(k).getName().contains("xa0")) {
+                            locationMealTime.get(j).getFoods().get(k).setName(Constants.DATA_NOT_AVAILABLE);
+                        }
+                    }
+                }
             }
+
+
+
 
             mLocations = locations;
             mMealTimes = mealTimes;
