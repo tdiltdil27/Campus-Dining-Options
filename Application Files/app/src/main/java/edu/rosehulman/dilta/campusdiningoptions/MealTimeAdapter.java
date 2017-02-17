@@ -81,7 +81,7 @@ public class MealTimeAdapter extends RecyclerView.Adapter<MealTimeAdapter.ViewHo
         for (Food food : foods) {
             boolean favorited = false;
             for (Food favorite_food : favorite_foods) {
-                if (food.getName().contains(favorite_food.getName())) {
+                if (food.getName().contains(favorite_food.getName()) && !foodString.contains(food.getName())) {
                     foodString = foodString + food.getName() + " ★ " + "\n";
                     favorited = true;
                 }

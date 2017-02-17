@@ -2,6 +2,7 @@ package edu.rosehulman.dilta.campusdiningoptions;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -104,10 +105,29 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     public void addFavorite(Favorite fav) {
         Log.d("FavoritesAdapter", "adding fav, user logged in: " + loggedIn);
         if (loggedIn) {
-            mRef.push().setValue(fav);
+            if(mRef.child(fav.getKey())==null) {
+                mRef.push().setValue(fav);
+            } else {
+                Snackbar.make(favoritesFrag.getView(), "Favorite already exists", Snackbar.LENGTH_LONG).show();
+            }
         } else {
-            this.mFavorites.add(0, fav);
-            notifyItemInserted(0);
+
+            if(mFavorites.size()==0) {
+                this.mFavorites.add(0, fav);
+            } else {
+                boolean exists = false;
+                for (int i = 0; i < mFavorites.size(); i++) {
+                    if (mFavorites.get(i).getFood().getName().equals(fav.getFood().getName())) {
+                        Snackbar.make(favoritesFrag.getView(), "Favorite already exists", Snackbar.LENGTH_LONG).show();
+                        exists = true;
+                        break;
+                    }
+                }
+                if(!exists) {
+                    mFavorites.add(0,fav);
+                    notifyItemInserted(0);
+                }
+            }
         }
     }
 

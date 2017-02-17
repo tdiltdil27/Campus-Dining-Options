@@ -95,7 +95,9 @@ public class MainFragment extends Fragment {
         loggedIn = activity.loggedIn();
         Log.d("MainFragment", "onCreateView");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-
+        if(!isNetworkAvailable()) {
+            Snackbar.make(view, "Data not currently available over network. Restart App when reconnected.", Snackbar.LENGTH_INDEFINITE).show();
+        }
         mSectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
 
         mViewPager = (ViewPager) view.findViewById(R.id.container);
@@ -237,9 +239,6 @@ public class MainFragment extends Fragment {
 
         @Override
         protected List<Location> doInBackground(String... urlStrings) {
-            if(!isNetworkAvailable()) {
-                Snackbar.make(getView(), "Data not currently available over network. Restart App when reconnected.", Snackbar.LENGTH_INDEFINITE).show();
-            }
             Log.d("MainFrag", "in doInBackground");
             List<Location> locations = new ArrayList<Location>();
             String urlString = urlStrings[0];
